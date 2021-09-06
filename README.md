@@ -4,7 +4,7 @@ Projet labyrinthe - version live
 
 Objectifs réalisés :
 
-- [x] Objectif 1
+- [ ] Objectif 1
 - [ ] Objectif 2
 - [ ] Objectif 3
 - [ ] Objectif 4
