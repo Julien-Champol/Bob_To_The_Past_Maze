@@ -17,12 +17,17 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int largeur;
     private int hauteur;
 
+    /**
+     * Method used to create a labyrinth from a given file.
+     *
+     * @param file the file to read.
+     */
     @Override
     public void creerLabyrinthe(String file) {
         Fichier f = new Fichier(file);
         // dimensions
-        largeur=f.lireNombre(); 
-        hauteur=f.lireNombre(); 
+        largeur = f.lireNombre();
+        hauteur = f.lireNombre();
         // ...
     }
 
