@@ -18,7 +18,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int hauteur;
 
     /**
-     * Method used to create a labyrinth from a given file.
+     * Method used to create a mase from a given file.
      *
      * @param file the file to read.
      */
@@ -28,7 +28,21 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         // dimensions
         largeur = f.lireNombre();
         hauteur = f.lireNombre();
-        // ...
+        // entrée et sortie
+        int x = f.lireNombre();
+        int y = f.lireNombre();
+        entree = new Salle(x, y);
+        x = f.lireNombre();
+        y = f.lireNombre();
+        sortie = new Salle(x, y);
+        // autres salles
+        x = f.lireNombre();
+        y = f.lireNombre();
+        while (x != -1 || y != -1) {
+            this.add(new Salle(x, y));
+            x = f.lireNombre();
+            y = f.lireNombre();
+        }
     }
 
     @Override

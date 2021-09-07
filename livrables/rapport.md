@@ -12,4 +12,8 @@
 ####     Réalisation de l'exercice 3 , 
         Création de la classe salle, 
         ajout d'une méthode estIdentique(ISalle) en vue des tests.
+####    Réalisation de l'exercice 4 ,
+        Implémentation de la méthode creerLabyrinthe(String),
+        ajout de la méthode dessinSalle().
+        Dessin du labyrinthe fonctionnel.
 

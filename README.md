@@ -4,13 +4,13 @@ Projet labyrinthe - version live
 
 Objectifs réalisés :
 
-- [ ] Objectif 1 : dessiner un labyrinthe
+- [X] Objectif 1 : dessiner un labyrinthe
 
     - [X] Exercice 1
     - [X] Exercice 2
     - [X] Exercice 3
-    - [ ] Exercice 4 
-    - [ ] Exercice 5  
+    - [X] Exercice 4 
+    - [X] Exercice 5  
 
 - [ ] Objectif 2 : tests (tests unitaires sur les formats de fichiers)
   

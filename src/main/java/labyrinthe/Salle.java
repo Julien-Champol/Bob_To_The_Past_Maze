@@ -6,7 +6,7 @@
 package labyrinthe;
 
 /**
- * Class representing data about a room in a labyrinth
+ * Class representing data about a room in a mase
  *
  * @author jchampol
  */

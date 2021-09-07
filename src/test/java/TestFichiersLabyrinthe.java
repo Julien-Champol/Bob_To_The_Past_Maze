@@ -1,6 +1,9 @@
+
 import static org.junit.Assert.*;
 import java.io.File;
+import labyrinthe.Labyrinthe;
 import org.junit.Test;
+import outils.Fichier;
 
 /**
  *
@@ -23,7 +26,6 @@ public class TestFichiersLabyrinthe {
         fail("not implemented");
     }
 
-
     @Test
     public void testPasDeDoublon() {
         File repertoire = new File("labys/");
@@ -38,4 +40,16 @@ public class TestFichiersLabyrinthe {
         fail("not implemented");
     }
 
+    @Test
+    public boolean testCoordonneesSallesFichier(File f) {
+        Labyrinthe test = new Labyrinthe();
+        test.creerLabyrinthe(f.getName());
+        for (var s : test) {
+            if (!(s.getX() >= 0 && s.getX() < test.getLargeur()
+                    && s.getY() >= 0 && s.getY() < test.getHauteur())) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -62,7 +62,8 @@ AVue
 --
 + Dessin(Ilabyrinthe, Collection&lt;ISprite&gt;)
 + chargementImages() : void
-+ dessinFond() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1560</x><y>870</y><w>220</w><h>140</h></coordinates><panel_attributes>Vue
++ dessinFond() : void
++ dessinSalle() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1560</x><y>870</y><w>220</w><h>140</h></coordinates><panel_attributes>Vue
 --
 ~ dessin : Dessin
 ~ labyrinthe : ILabyrinthe
