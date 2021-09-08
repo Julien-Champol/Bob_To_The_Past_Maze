@@ -12,9 +12,13 @@ import personnages.IPersonnage;
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
+    //Mase entry
     protected ISalle entree;
+    //Mase exit
     protected ISalle sortie;
+    //Width
     private int largeur;
+    //Height
     private int hauteur;
 
     /**
@@ -32,9 +36,11 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         int x = f.lireNombre();
         int y = f.lireNombre();
         entree = new Salle(x, y);
+        this.add(entree);
         x = f.lireNombre();
         y = f.lireNombre();
         sortie = new Salle(x, y);
+        this.add(sortie);
         // autres salles
         x = f.lireNombre();
         y = f.lireNombre();

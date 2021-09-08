@@ -14,9 +14,9 @@ Objectifs réalisés :
 
 - [ ] Objectif 2 : tests (tests unitaires sur les formats de fichiers)
   
-    - [ ] Exercice 6
-    - [ ] Exercice 7
-    - [ ] Exercice 8
+    - [X] Exercice 6
+    - [X] Exercice 7
+    - [X] Exercice 8
     - [ ] Exercice 9 
 
 - [ ] Objectif 3 : déplacer des personnages

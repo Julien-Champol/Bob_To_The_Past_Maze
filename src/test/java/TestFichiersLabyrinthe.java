@@ -1,9 +1,9 @@
 
 import static org.junit.Assert.*;
 import java.io.File;
-import labyrinthe.Labyrinthe;
 import org.junit.Test;
-import outils.Fichier;
+import static outils.Fichier.testCoordonneesSallesFichier;
+import static outils.Fichier.testDoublonsSallesFichier;
 
 /**
  *
@@ -19,18 +19,38 @@ public class TestFichiersLabyrinthe {
         return fichiers;
     }
 
+    /**
+     * The only invalid files that are not detected with this test are
+     * levelInvalide3.txt and levelInvalide4.txt because they are containing
+     * duplicates.
+     */
     @Test
     public void testCoordonneesSalles() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
-        fail("not implemented");
+        for (var fic : fichiers) {
+            if (!testCoordonneesSallesFichier(fic)) {
+                System.out.println("Invalide " + fic.getName());
+            }
+            assertTrue(testCoordonneesSallesFichier(fic));
+        }
     }
 
+    /**
+     * Method used to detect duplicates. HashSets cannot contain duplicates, we
+     * convert our ArrayList into a HashSet if the sizes of our containers are
+     * differents, we have duplicates. This code is not a copy/paste but credits
+     * to :
+     * https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
+     *
+     */
     @Test
     public void testPasDeDoublon() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
-        fail("not implemented");
+        for (var fic : fichiers) {
+            assertTrue(testDoublonsSallesFichier(fic));
+        }
     }
 
     @Test
@@ -40,16 +60,5 @@ public class TestFichiersLabyrinthe {
         fail("not implemented");
     }
 
-    @Test
-    public boolean testCoordonneesSallesFichier(File f) {
-        Labyrinthe test = new Labyrinthe();
-        test.creerLabyrinthe(f.getName());
-        for (var s : test) {
-            if (!(s.getX() >= 0 && s.getX() < test.getLargeur()
-                    && s.getY() >= 0 && s.getY() < test.getHauteur())) {
-                return false;
-            }
-        }
-        return true;
-    }
+    
 }

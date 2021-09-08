@@ -79,7 +79,7 @@ IPersonnage
 ISprite
 --
 + dessiner(GraphicsContext) : void
-+ setCoordonnees(int, int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2290</x><y>280</y><w>30</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>350</y><w>350</w><h>150</h></coordinates><panel_attributes>Salle
++ setCoordonnees(int, int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2290</x><y>280</y><w>30</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>350</y><w>350</w><h>160</h></coordinates><panel_attributes>Salle
 --
 - x : int
 - y : int
@@ -88,4 +88,5 @@ ISprite
 + getX() : int
 + getY() : int
 + estAdjacente(ISalle) : boolean
-+ estIdentique(ISalle) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>240</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element></diagram>
++ equals(Object) : boolean
++ hashCode() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>240</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element></diagram>
