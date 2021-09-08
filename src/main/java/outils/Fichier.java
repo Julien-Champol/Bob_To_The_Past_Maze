@@ -75,9 +75,11 @@ public class Fichier {
      * @return true iff all the tests are passed
      * @throws outils.ExceptionInvalidFile
      */
+    
     public static boolean testValide(String nomFichier) throws ExceptionInvalidFile {
         File nouveau = new File(nomFichier);
         return (testCoordonneesSallesFichier(nouveau) && testDoublonsSallesFichier(nouveau));
     }
+    
 
 }

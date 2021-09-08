@@ -32,28 +32,30 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     @Override
     public void creerLabyrinthe(String file) throws ExceptionInvalidFile {
         Fichier f = new Fichier(file);
-        // dimensions
-        largeur = f.lireNombre();
-        hauteur = f.lireNombre();
-        // entrée et sortie
-        int x = f.lireNombre();
-        int y = f.lireNombre();
-        entree = new Salle(x, y);
-        this.add(entree);
-        x = f.lireNombre();
-        y = f.lireNombre();
-        sortie = new Salle(x, y);
-        this.add(sortie);
-        // autres salles
-        x = f.lireNombre();
-        y = f.lireNombre();
-        while (x != -1 || y != -1) {
-            this.add(new Salle(x, y));
-            x = f.lireNombre();
-            y = f.lireNombre();
-        }
+
         if (!Fichier.testValide(file)) {
             throw new ExceptionInvalidFile("Le fichier de chargement est invalide");
+        } else {
+            // dimensions
+            largeur = f.lireNombre();
+            hauteur = f.lireNombre();
+            // entrée et sortie
+            int x = f.lireNombre();
+            int y = f.lireNombre();
+            entree = new Salle(x, y);
+            this.add(entree);
+            x = f.lireNombre();
+            y = f.lireNombre();
+            sortie = new Salle(x, y);
+            this.add(sortie);
+            // autres salles
+            x = f.lireNombre();
+            y = f.lireNombre();
+            while (x != -1 || y != -1) {
+                this.add(new Salle(x, y));
+                x = f.lireNombre();
+                y = f.lireNombre();
+            }
         }
     }
 

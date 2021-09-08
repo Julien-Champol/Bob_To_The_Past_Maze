@@ -85,7 +85,7 @@ public class Core {
                 invalid = true;
                 if (i == -1) {
                     System.out.println("Fichier de secours invalide, arrêt du programme.");
-                    exit(0);
+                    exit(1);
                 }
                 i = -1;
             }

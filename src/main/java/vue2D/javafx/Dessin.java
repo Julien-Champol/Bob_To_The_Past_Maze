@@ -40,7 +40,7 @@ public class Dessin extends Canvas {
         solImage = new Image("file:icons/pyramide.jpg");
         salleImage = new Image("file:icons/ground.gif");
         entree = new Image("file:icons/groundP.gif");
-        sortie = new Image("file:icons/sorties.gif");
+        sortie = new Image("file:icons/sortie.gif");
     }
 
     /**

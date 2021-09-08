@@ -51,7 +51,9 @@
         setPosition().
         Clean and build puis run ne permet plus un lancement correct du code.
         Retour d'erreur : "Failed to execute goal org.openjfx:javafx-maven-plugin:0.0.4:run".
-        Essai redémarrage PC.
+        Essai redémarrage PC. Toujours la même erreur.
+        Tentative d'isolation du problème en commentant les parties du code les plus récentes.
+        Partie du code bloquant le lancement du programme trouvée : lignes 55 à 57 du code de la classe labyrinthe.
 
 
 
