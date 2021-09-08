@@ -32,6 +32,10 @@
         Appropriation de la boucle principale.
         Déclaration de l'exception dans le programme, utilisation de exit(0) pour quitter le programme comme
         demandé dans l'énoncé.
+####    Réalisation exercice 10
+        Début de la suite de l'implémentation des classes salle et labyrinthe. estAdjacente(ISalle) a été implémentée par 
+        précaution au début du projet mais mise à jour nécessaire. Mise à jour de la classe labyrinthe, implémentation
+        de la fonction sallesAccessibles(IPersonnage).
 
 
 

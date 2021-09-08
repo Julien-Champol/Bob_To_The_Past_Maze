@@ -11,38 +11,38 @@ Objectifs réalisés :
     - [X] Exercice 3
     - [X] Exercice 4 
     - [X] Exercice 5  
-
+  <br/>
 
 - [X] Objectif 2 : tests (tests unitaires sur les formats de fichiers)
   
     - [X] Exercice 6
     - [X] Exercice 7
     - [X] Exercice 8
-    - [X] Exercice 9 
-
+    - [X] Exercice 9  
+  <br/> 
 
 - [ ] Objectif 3 : déplacer des personnages
   
-    - [ ] Exercice 10
+    - [X] Exercice 10
     - [ ] Exercice 11
     - [ ] Exercice 12
     - [ ] Exercice 13
     - [ ] Exercice 14
-    - [ ] Exercice 15
-  
+    - [ ] Exercice 15  
+  <br/>
 
 - [ ] Objectif 4 : monstres (polymorphisme sur les personnages)
   
   - [ ] Exercice 16
   - [ ] Exercice 17
-  - [ ] Exercice 18
-
+  - [ ] Exercice 18  
+  <br/>
 
 - [ ] Objectif 5 : améliorations simples (animations, éclairage localisé)
   
   - [ ] Exercice 19
-  - [ ] Exercice 20
-
+  - [ ] Exercice 20  
+  <br/>
 
 - [ ] Objectif 6 : améliorations plus complexe basées sur les plus courts chemins
 

@@ -2,6 +2,7 @@ package labyrinthe;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import outils.ExceptionInvalidFile;
 
 import outils.Fichier;
@@ -56,9 +57,27 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         }
     }
 
+    /**
+     * Method used to return the accessibles room for the player
+     *
+     * @param bob the player's room
+     * @return a collection of rooms
+     */
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
-        return null;
+        Salle actu = (Salle) bob.getPosition();
+        Collection<ISalle> sallesAccessibles = new HashSet<>();
+        Collection<ISalle> analyse = new HashSet<>();
+        analyse.add(new Salle(bob.getPosition().getX(), bob.getPosition().getY() + 1));
+        analyse.add(new Salle(bob.getPosition().getX(), bob.getPosition().getY() - 1));
+        analyse.add(new Salle(bob.getPosition().getX() - 1, bob.getPosition().getY()));
+        analyse.add(new Salle(bob.getPosition().getX() + 1, bob.getPosition().getY() + 1));
+        for (var salle : analyse) {
+            if (actu.estAdjacente(salle)) {
+                sallesAccessibles.add(salle);
+            }
+        }
+        return sallesAccessibles;
     }
 
     @Override
