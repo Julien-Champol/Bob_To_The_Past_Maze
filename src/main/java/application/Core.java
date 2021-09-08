@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import static java.lang.System.exit;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
@@ -13,6 +14,7 @@ import vue2D.sprites.ISprite;
  * @author INFO Professors team
  */
 public class Core {
+
     ISprite heros;
     ILabyrinthe labyrinthe;
 
@@ -63,11 +65,30 @@ public class Core {
         System.out.println("Gagné!");
     }
 
+    /**
+     * Method used to load the mase, from a default file if the one given in
+     * parameters doesn't work, if this one doesn't work either we quit the
+     * program.
+     *
+     * @param fic the file we load the mase from
+     */
     private void chargementLaby(String fic) {
-        try {
-            labyrinthe.creerLabyrinthe(fic);
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        boolean invalid = true;
+        int i = 0;
+        while (invalid) {
+            try {
+                labyrinthe.creerLabyrinthe(fic);
+                invalid = false;
+            } catch (IOException ex) {
+                System.out.println("!!Fichier invalide, chargement à partir du niveau 7!!");
+                fic = "labys/level7.txt";
+                invalid = true;
+                if (i == -1) {
+                    System.out.println("Fichier de secours invalide, arrêt du programme.");
+                    exit(0);
+                }
+                i = -1;
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package labyrinthe;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import outils.ExceptionInvalidFile;
 
 import outils.Fichier;
 import personnages.IPersonnage;
@@ -25,9 +26,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
      * Method used to create a mase from a given file.
      *
      * @param file the file to read.
+     * @throws outils.ExceptionInvalidFile
      */
     @Override
-    public void creerLabyrinthe(String file) {
+    public void creerLabyrinthe(String file) throws ExceptionInvalidFile {
         Fichier f = new Fichier(file);
         // dimensions
         largeur = f.lireNombre();
@@ -48,6 +50,9 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
             this.add(new Salle(x, y));
             x = f.lireNombre();
             y = f.lireNombre();
+        }
+        if (!Fichier.testValide(file)) {
+            throw new ExceptionInvalidFile("Le fichier de chargement est invalide");
         }
     }
 

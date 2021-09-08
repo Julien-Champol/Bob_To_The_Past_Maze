@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 import labyrinthe.Labyrinthe;
+import outils.ExceptionInvalidFile;
 
 /**
  *
@@ -36,8 +37,9 @@ public class Fichier {
      *
      * @param f The file we are reading
      * @return true iff all the file's coordinates are valid ones
+     * @throws outils.ExceptionInvalidFile
      */
-    public static boolean testCoordonneesSallesFichier(File f) {
+    public static boolean testCoordonneesSallesFichier(File f) throws ExceptionInvalidFile {
         Labyrinthe test = new Labyrinthe();
         test.creerLabyrinthe("labys/" + f.getName());
         for (var s : test) {
@@ -54,8 +56,9 @@ public class Fichier {
      *
      * @param f the file to test
      * @return true iff the files doesn't contain duplicates
+     * @throws outils.ExceptionInvalidFile
      */
-    public static boolean testDoublonsSallesFichier(File f) {
+    public static boolean testDoublonsSallesFichier(File f) throws ExceptionInvalidFile {
         Labyrinthe test = new Labyrinthe();
         test.creerLabyrinthe("labys/" + f.getName());
         Set comparaison = new HashSet(test);
@@ -70,8 +73,9 @@ public class Fichier {
      *
      * @param nomFichier the specified file
      * @return true iff all the tests are passed
+     * @throws outils.ExceptionInvalidFile
      */
-    public static boolean testValide(String nomFichier) {
+    public static boolean testValide(String nomFichier) throws ExceptionInvalidFile {
         File nouveau = new File(nomFichier);
         return (testCoordonneesSallesFichier(nouveau) && testDoublonsSallesFichier(nouveau));
     }
