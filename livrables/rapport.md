@@ -27,6 +27,7 @@
         Ajout des méthodes en static hors du package de test pour écrire la fonction suivante,
         testValide(String) implémentée.
 ####    Réalisation exercice 9
+#####   Réponse question :
         Réponse question exo 9 : Cette exception doit hériter de la classe IOException.
         Création de ExceptionInvalidFile dans le package outils.
         Appropriation de la boucle principale.
@@ -36,6 +37,21 @@
         Début de la suite de l'implémentation des classes salle et labyrinthe. estAdjacente(ISalle) a été implémentée par 
         précaution au début du projet mais mise à jour nécessaire. Mise à jour de la classe labyrinthe, implémentation
         de la fonction sallesAccessibles(IPersonnage).
+####    Réalisation exercice 11
+        Implémentation de la classe abstraite APersonnage, ajout de l'attribut privé positionCourante.
+####    Réalisation exercice 12
+#####   Réponse question :
+        Visibilité de l'attribut salleChoisie : public. 
+        Implémentation de la méthode faitSonChoix(Collection<ISalle>).
+####    Réalisation exercice 13
+        Ecriture de la classe abstraite ASprite qui implémente l'interface ISprite, implémentation de la méthode dessiner()
+        avec ajout des attributs nécessaires dont tamon et unite.
+####    Réalisation exercice 14
+        Création de la classe HerosSprite héritant de ASprite, redéfinition de faitSonChoix(Collection<ISalle>), getPosition(),
+        setPosition().
+        Clean and build puis run ne permet plus un lancement correct du code.
+        Retour d'erreur : "Failed to execute goal org.openjfx:javafx-maven-plugin:0.0.4:run".
+        Essai redémarrage PC.
 
 
 

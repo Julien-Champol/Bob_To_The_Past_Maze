@@ -2,6 +2,7 @@
 import static org.junit.Assert.*;
 import java.io.File;
 import org.junit.Test;
+import outils.ExceptionInvalidFile;
 import static outils.Fichier.testCoordonneesSallesFichier;
 import static outils.Fichier.testDoublonsSallesFichier;
 
@@ -23,9 +24,11 @@ public class TestFichiersLabyrinthe {
      * The only invalid files that are not detected with this test are
      * levelInvalide3.txt and levelInvalide4.txt because they are containing
      * duplicates.
+     *
+     * @throws outils.ExceptionInvalidFile
      */
     @Test
-    public void testCoordonneesSalles() {
+    public void testCoordonneesSalles() throws ExceptionInvalidFile {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
         for (var fic : fichiers) {
@@ -37,15 +40,16 @@ public class TestFichiersLabyrinthe {
     }
 
     /**
-     * Method used to detect duplicates. HashSets cannot contain duplicates, we
-     * convert our ArrayList into a HashSet if the sizes of our containers are
-     * differents, we have duplicates. This code is not a copy/paste but credits
-     * to :
-     * https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
+     * Method used to detect duplicates.HashSets cannot contain duplicates, we
+ convert our ArrayList into a HashSet if the sizes of our containers are
+ differents, we have duplicates. This code is not a copy/paste but credits
+ to :
+ https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
      *
+     * @throws outils.ExceptionInvalidFile
      */
     @Test
-    public void testPasDeDoublon() {
+    public void testPasDeDoublon() throws ExceptionInvalidFile {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
         for (var fic : fichiers) {
@@ -60,5 +64,4 @@ public class TestFichiersLabyrinthe {
         fail("not implemented");
     }
 
-    
 }

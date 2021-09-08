@@ -4,9 +4,7 @@ import java.util.Collection;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import labyrinthe.ILabyrinthe;
-import labyrinthe.ISalle;
 import vue2D.sprites.ISprite;
 
 /**
@@ -21,6 +19,8 @@ public class Dessin extends Canvas {
     private GraphicsContext tampon;
     private Image solImage;
     private Image salleImage;
+    private Image entree;
+    private Image sortie;
 
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
@@ -39,6 +39,8 @@ public class Dessin extends Canvas {
     public void chargementImages() {
         solImage = new Image("file:icons/pyramide.jpg");
         salleImage = new Image("file:icons/ground.gif");
+        entree = new Image("file:icons/groundP.gif");
+        sortie = new Image("file:icons/sorties.gif");
     }
 
     /**
@@ -53,6 +55,15 @@ public class Dessin extends Canvas {
      * Method used to draw the rooms of the mase.
      */
     public void dessinSalle() {
-        this.labyrinthe.forEach(n -> tampon.drawImage(salleImage, n.getX() * unite, n.getY() * unite));
+        //this.labyrinthe.forEach(n -> tampon.drawImage(salleImage, n.getX() * unite, n.getY() * unite));
+        for (var s : this.labyrinthe) {
+            if (s.equals(labyrinthe.getEntree())) {
+                tampon.drawImage(entree, s.getX() * unite, s.getY() * unite);
+            } else if (s.equals(labyrinthe.getSortie())) {
+                tampon.drawImage(sortie, s.getX() * unite, s.getY() * unite);
+            } else {
+                tampon.drawImage(salleImage, s.getX() * unite, s.getY() * unite);
+            }
+        }
     }
 }

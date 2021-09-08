@@ -24,9 +24,9 @@ Objectifs réalisés :
 - [ ] Objectif 3 : déplacer des personnages
   
     - [X] Exercice 10
-    - [ ] Exercice 11
-    - [ ] Exercice 12
-    - [ ] Exercice 13
+    - [X] Exercice 11
+    - [X] Exercice 12
+    - [X] Exercice 13
     - [ ] Exercice 14
     - [ ] Exercice 15  
   <br/>
