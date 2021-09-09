@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 import labyrinthe.Labyrinthe;
+import labyrinthe.Salle;
 import outils.ExceptionInvalidFile;
 
 /**
@@ -41,10 +42,21 @@ public class Fichier {
      */
     public static boolean testCoordonneesSallesFichier(File f) throws ExceptionInvalidFile {
         Labyrinthe test = new Labyrinthe();
-        test.creerLabyrinthe("labys/" + f.getName());
+        Fichier fic = new Fichier("labys/" + f.getName());
+
+        int hauteur = fic.lireNombre();
+        int largeur = fic.lireNombre();
+        int x = fic.lireNombre();
+        int y = fic.lireNombre();
+        while (x != -1 || y != -1) {
+            test.add(new Salle(x, y));
+            x = fic.lireNombre();
+            y = fic.lireNombre();
+        }
+
         for (var s : test) {
-            if (!(s.getX() >= 0 && s.getX() < test.getLargeur())
-                    || !(s.getY() >= 0 && s.getY() < test.getHauteur())) {
+            if (!(s.getX() >= 0 && s.getX() < largeur)
+                    || !(s.getY() >= 0 && s.getY() < hauteur)) {
                 return false;
             }
         }
@@ -59,8 +71,22 @@ public class Fichier {
      * @throws outils.ExceptionInvalidFile
      */
     public static boolean testDoublonsSallesFichier(File f) throws ExceptionInvalidFile {
+        //Labyrinthe test = new Labyrinthe();
+        //test.creerLabyrinthe("labys/" + f.getName());
+
         Labyrinthe test = new Labyrinthe();
-        test.creerLabyrinthe("labys/" + f.getName());
+        Fichier fic = new Fichier("labys/" + f.getName());
+
+        int hauteur = fic.lireNombre();
+        int largeur = fic.lireNombre();
+        int x = fic.lireNombre();
+        int y = fic.lireNombre();
+        while (x != -1 || y != -1) {
+            test.add(new Salle(x, y));
+            x = fic.lireNombre();
+            y = fic.lireNombre();
+        }
+
         Set comparaison = new HashSet(test);
         if (comparaison.size() != test.size()) {
             System.out.println("Contient des doublons : " + f.getName());
@@ -75,11 +101,9 @@ public class Fichier {
      * @return true iff all the tests are passed
      * @throws outils.ExceptionInvalidFile
      */
-    
     public static boolean testValide(String nomFichier) throws ExceptionInvalidFile {
         File nouveau = new File(nomFichier);
         return (testCoordonneesSallesFichier(nouveau) && testDoublonsSallesFichier(nouveau));
     }
-    
 
 }

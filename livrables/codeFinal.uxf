@@ -126,5 +126,6 @@ ASprite
 --
 
 --
++ HeroSprite(IPersonnage)
 
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>730</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element></diagram>

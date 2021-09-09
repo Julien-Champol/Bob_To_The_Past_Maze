@@ -41,10 +41,10 @@ public class TestFichiersLabyrinthe {
 
     /**
      * Method used to detect duplicates.HashSets cannot contain duplicates, we
- convert our ArrayList into a HashSet if the sizes of our containers are
- differents, we have duplicates. This code is not a copy/paste but credits
- to :
- https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
+     * convert our ArrayList into a HashSet if the sizes of our containers are
+     * differents, we have duplicates. This code is not a copy/paste but credits
+     * to :
+     * https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
      *
      * @throws outils.ExceptionInvalidFile
      */

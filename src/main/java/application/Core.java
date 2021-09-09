@@ -73,21 +73,16 @@ public class Core {
      * @param fic the file we load the mase from
      */
     private void chargementLaby(String fic) {
-        boolean invalid = true;
-        int i = 0;
-        while (invalid) {
+        try {
+            labyrinthe.creerLabyrinthe(fic);
+        } catch (IOException ex) {
             try {
-                labyrinthe.creerLabyrinthe(fic);
-                invalid = false;
-            } catch (IOException ex) {
                 System.out.println("!!Fichier invalide, chargement à partir du niveau 7!!");
                 fic = "labys/level7.txt";
-                invalid = true;
-                if (i == -1) {
-                    System.out.println("Fichier de secours invalide, arrêt du programme.");
-                    exit(1);
-                }
-                i = -1;
+                labyrinthe.creerLabyrinthe(fic);
+            } catch (IOException e) {
+                System.out.println("Fichier de secours invalide, arrêt du programme.");
+                exit(1);
             }
         }
     }

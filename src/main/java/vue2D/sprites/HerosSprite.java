@@ -17,7 +17,7 @@ import personnages.IPersonnage;
 public class HerosSprite extends ASprite implements EventHandler<Event> {
 
     public HerosSprite(IPersonnage monPerso) {
-        super(monPerso, new Image("file:icons/link/LinkRunShieldL1.gif"));
+        super(monPerso, new Image("file:icons/link/LinkRunR1.gif"));
     }
 
     @Override

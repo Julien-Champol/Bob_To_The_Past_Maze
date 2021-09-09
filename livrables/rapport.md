@@ -54,6 +54,19 @@
         Essai redémarrage PC. Toujours la même erreur.
         Tentative d'isolation du problème en commentant les parties du code les plus récentes.
         Partie du code bloquant le lancement du programme trouvée : lignes 55 à 57 du code de la classe labyrinthe.
+## 09/09 :
+#####   Reprise du développement au bug du jour précédent :
+        Ajout d'un double try/catch dans chargementLaby(String) afin de rendre le code plus lisible.
+        Relecture de la méthode testValide, suite à une indication run time exception, je cherche une éventuelle récursivité infinie suite à
+        une discussion avec quelqu'un ayant le même problème.
+        Récursivité infinie identifiée dans la fonction testValide(). Elle appelle une fonction utilisant creerLabyrinthe() mais cette fonction
+        utilise elle-même testValide(). Il y a donc une boucle récursive infinie dans ces lignes de code.
+        Il faut essayer de retirer l'appel à creerLabyrinthe(String) dans les tests. Cela est possible en appellant uniquement la partie du code de creerLabyrinthe(String) qui est nécessaire et qui tient en 8 lignes. Les tests sont fonctionnels à nouveau.
+        Le programme se lance correctement.
+#####   Reprise exercice 14
+
+
+
 
 
 

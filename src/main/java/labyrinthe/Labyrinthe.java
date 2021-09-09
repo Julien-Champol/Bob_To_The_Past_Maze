@@ -32,7 +32,6 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     @Override
     public void creerLabyrinthe(String file) throws ExceptionInvalidFile {
         Fichier f = new Fichier(file);
-
         if (!Fichier.testValide(file)) {
             throw new ExceptionInvalidFile("Le fichier de chargement est invalide");
         } else {
