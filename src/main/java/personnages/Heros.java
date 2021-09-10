@@ -19,6 +19,15 @@ public class Heros extends APersonnage {
     public ISalle salleChoisie;
 
     /**
+     * Parameterized constructor of the Heros class
+     *
+     * @param entree
+     */
+    public Heros(ISalle entree) {
+        this.salleChoisie = entree;
+    }
+
+    /**
      * Method used to return the room chosen by the player if it's accessible,
      * else his current position
      *

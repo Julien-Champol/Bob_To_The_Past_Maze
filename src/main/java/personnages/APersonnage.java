@@ -10,6 +10,8 @@ import labyrinthe.ISalle;
 import labyrinthe.Salle;
 
 /**
+ * Abstract class representing data about any character, basic structure for the
+ * heroes, the monsters and their respective sprites
  *
  * @author jchampol
  */

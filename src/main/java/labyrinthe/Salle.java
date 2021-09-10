@@ -87,6 +87,11 @@ public class Salle implements ISalle {
         return true;
     }
 
+    /**
+     * The class hashing method, has to be overriden
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;

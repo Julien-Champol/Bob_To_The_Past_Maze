@@ -7,9 +7,11 @@ import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import personnages.IPersonnage;
 import vue2D.IVue;
+import vue2D.sprites.HerosSprite;
 import vue2D.sprites.ISprite;
 
 /**
+ * Class giving the fundamental methods so that the code can run
  *
  * @author INFO Professors team
  */
@@ -18,19 +20,32 @@ public class Core {
     ISprite heros;
     ILabyrinthe labyrinthe;
 
+    /**
+     * Method used to initialize the mase
+     */
     protected void initLabyrinthe() {
         // creation du labyrinthe
         labyrinthe = new labyrinthe.Labyrinthe();
         chargementLaby("labys/level3.txt");
     }
 
+    /**
+     * Method used to initilaize the sprites
+     *
+     * @param vue
+     */
     protected void initSprites(IVue vue) {
         // creation du heros 
-        //IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
-        //this.heros = new HerosSprite(h, labyrinthe);
-        //vue.add(this.heros);
+        IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
+        this.heros = new HerosSprite(h, labyrinthe);
+        vue.add(this.heros);
     }
 
+    /**
+     * The game's loop
+     *
+     * @param vue
+     */
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
@@ -87,6 +102,11 @@ public class Core {
         }
     }
 
+    /**
+     * Method used to put the program to sleep for nb miliseconds
+     *
+     * @param nb the number of miliseconds
+     */
     protected void temporisation(int nb) {
         try {
             Thread.sleep(nb); // pause de nb millisecondes

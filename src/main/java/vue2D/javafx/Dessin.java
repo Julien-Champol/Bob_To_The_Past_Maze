@@ -8,6 +8,7 @@ import labyrinthe.ILabyrinthe;
 import vue2D.sprites.ISprite;
 
 /**
+ * Class representing data about drawing methods of the program
  *
  * @author INFO Professors team
  */
@@ -22,6 +23,12 @@ public class Dessin extends Canvas {
     private Image entree;
     private Image sortie;
 
+    /**
+     * Parameterized constructor of the class
+     *
+     * @param labyrinthe the mase that is being played
+     * @param sprites the heroes, walls ... sprites to draw
+     */
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
         this.labyrinthe = labyrinthe;
@@ -55,7 +62,6 @@ public class Dessin extends Canvas {
      * Method used to draw the rooms of the mase.
      */
     public void dessinSalle() {
-        //this.labyrinthe.forEach(n -> tampon.drawImage(salleImage, n.getX() * unite, n.getY() * unite));
         for (var s : this.labyrinthe) {
             if (s.equals(labyrinthe.getEntree())) {
                 tampon.drawImage(entree, s.getX() * unite, s.getY() * unite);

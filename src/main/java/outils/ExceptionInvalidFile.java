@@ -8,6 +8,8 @@ package outils;
 import java.io.IOException;
 
 /**
+ * Class representing data about the exception that is thrown when an invalid
+ * file is being computed
  *
  * @author jchampol
  */

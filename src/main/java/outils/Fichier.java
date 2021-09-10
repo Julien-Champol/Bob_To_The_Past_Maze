@@ -6,9 +6,9 @@ import java.util.Scanner;
 import java.util.Set;
 import labyrinthe.Labyrinthe;
 import labyrinthe.Salle;
-import outils.ExceptionInvalidFile;
 
 /**
+ * Class representing data about a file representation of a mase
  *
  * @author INFO Professors team
  */

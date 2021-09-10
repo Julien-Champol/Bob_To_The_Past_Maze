@@ -27,7 +27,7 @@ Objectifs réalisés :
     - [X] Exercice 11
     - [X] Exercice 12
     - [X] Exercice 13
-    - [ ] Exercice 14
+    - [X] Exercice 14
     - [ ] Exercice 15  
   <br/>
 

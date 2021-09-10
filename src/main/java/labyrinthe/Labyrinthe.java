@@ -9,7 +9,8 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- *
+ * Class repreenting data about a mase 
+ * 
  * @author INFO Professors team
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
@@ -81,26 +82,53 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         return sallesAccessibles;
     }
 
+    /**
+     * The mase's entry accessor
+     *
+     * @return
+     */
     @Override
     public ISalle getEntree() {
         return entree;
     }
 
+    /**
+     * The mase's exit accessor
+     *
+     * @return
+     */
     @Override
     public ISalle getSortie() {
         return sortie;
     }
 
+    /**
+     * Method returning possible paths between u and v
+     *
+     * @param u
+     * @param v
+     * @return
+     */
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {
         return null;
     }
 
+    /**
+     * The mase's width accessor
+     *
+     * @return
+     */
     @Override
     public int getLargeur() {
         return largeur;
     }
 
+    /**
+     * The mase's height accessor
+     *
+     * @return
+     */
     @Override
     public int getHauteur() {
         return hauteur;

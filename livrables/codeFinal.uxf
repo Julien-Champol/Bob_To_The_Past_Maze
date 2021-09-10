@@ -107,6 +107,7 @@ ExceptionInvalidFile
 --
 + salleChoisie : ISalle
 --
++ Heros(ISalle)
 + faitSonChoix(Collection &lt;ISalle &gt;) : ISalle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2230</x><y>249</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1988</x><y>539</y><w>260</w><h>240</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ASprite
 --
@@ -122,10 +123,11 @@ ASprite
 + dessiner(GraphicsContext) : void
 + setCoordonnees(int, int) : void
 + getSpriteX() : int
-+ getSpriteY() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>579</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2360</x><y>655</y><w>260</w><h>110</h></coordinates><panel_attributes>HeroSprite
++ getSpriteY() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>579</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2360</x><y>655</y><w>260</w><h>100</h></coordinates><panel_attributes>HeroSprite
 --
-
+- monHeros : Heros
 --
-+ HeroSprite(IPersonnage)
++ HeroSprite(IPersonnage, ILabyrinthe)
++ handle(KeyEvent) : void
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>730</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>730</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2510</x><y>900</y><w>100</w><h>30</h></coordinates><panel_attributes>EventHandler</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2540</x><y>750</y><w>30</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element></diagram>

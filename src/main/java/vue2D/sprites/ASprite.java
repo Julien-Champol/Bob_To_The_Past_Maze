@@ -13,23 +13,31 @@ import labyrinthe.Salle;
 import personnages.IPersonnage;
 
 /**
+ * Abstract class giving basic structure to code the sprites, this class
+ * associate a sprite and a character
  *
  * @author jchampol
  */
 public abstract class ASprite implements ISprite {
-    
+
     private IPersonnage monPersonnage;
-    
+
     private int spriteX;
-    
+
     private int spriteY;
-    
+
     private int unite = 15;
-    
+
     private GraphicsContext tampon;
-    
+
     private Image spriteImage;
-    
+
+    /**
+     * Parameterized constructor of the class
+     *
+     * @param monPersonnage the character
+     * @param spriteImage his sprite
+     */
     public ASprite(IPersonnage monPersonnage, Image spriteImage) {
         this.monPersonnage = monPersonnage;
         this.spriteImage = spriteImage;
@@ -91,7 +99,7 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Return the position of the player
+     * Returns the position of the player
      *
      * @return
      */
@@ -99,10 +107,15 @@ public abstract class ASprite implements ISprite {
     public ISalle getPosition() {
         return this.monPersonnage.getPosition();
     }
-    
+
+    /**
+     * Sets the player's position
+     *
+     * @param s
+     */
     @Override
     public void setPosition(ISalle s) {
         this.monPersonnage.setPosition(s);
     }
-    
+
 }

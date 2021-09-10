@@ -63,9 +63,23 @@
         utilise elle-même testValide(). Il y a donc une boucle récursive infinie dans ces lignes de code.
         Il faut essayer de retirer l'appel à creerLabyrinthe(String) dans les tests. Cela est possible en appellant uniquement la partie du code de creerLabyrinthe(String) qui est nécessaire et qui tient en 8 lignes. Les tests sont fonctionnels à nouveau.
         Le programme se lance correctement.
+## 10/09 :
 #####   Reprise exercice 14
+        Implémentation, re-définition de handle, mise à jour de l'attribut salleChoisie.
+        Implémentation de EventHandler<KeyEvent> refusée, erreur :
+*type argument java.awt.event.KeyEvent is not within bounds of type-variable T*
 
+        Solution : utilisation d'un import java.awt au lieu de javafx.
+        Ajout d'un attribut monHeros afin de pouvoir accéder à l'attribut salleChoisie et le mettre à jour.
+        Première version de l'exercice 14 réalisée, le code se lance correctement, passage à l'exercice 15.
+####    Réalisation exercice 15
+        Code de Core décommenté : manque un constructeur dans la classe Heros.
+        Constructeur de HerosSprite erroné, ajout d'un paramètre de type ILabyrinthe.
+        Suite à une lecture générale du code, je réalise que je ne le maitrise pas. Le code initial est donc
+        entièrement commenté pour mieux le comprendre.
 
+        
+        
 
 
 

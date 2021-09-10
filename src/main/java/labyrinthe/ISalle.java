@@ -1,6 +1,7 @@
 package labyrinthe;
 
 /**
+ * Interface giving structure for the code of the mase's rooms
  *
  * @author INFO Professors team
  */
