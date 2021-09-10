@@ -28,8 +28,6 @@ public abstract class ASprite implements ISprite {
 
     private int unite = 15;
 
-    private GraphicsContext tampon;
-
     private Image spriteImage;
 
     /**
@@ -51,7 +49,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        tampon.drawImage(spriteImage, monPersonnage.getPosition().getX(),
+        g.drawImage(spriteImage, monPersonnage.getPosition().getX(),
                 monPersonnage.getPosition().getY(), unite,
                 unite);
     }

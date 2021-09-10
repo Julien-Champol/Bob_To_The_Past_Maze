@@ -1,10 +1,12 @@
 package vue2D.javafx;
 
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import labyrinthe.ILabyrinthe;
 import vue2D.IVue;
 import vue2D.AVue;
+import vue2D.sprites.ISprite;
 
 /**
  * Class representing data about the view using the structure of AVue and Ivue
@@ -31,13 +33,34 @@ public class Vue extends AVue implements IVue {
     }
 
     /**
-     * The drawing method of the viewF
+     * The drawing method of the view
      */
     @Override
     public void dessiner() {
         // recopie du fond (image); murs + salles
         dessin.dessinFond();
         dessin.dessinSalle();
+        for (var s : this) {
+            s.dessiner(dessin.getGraphicsContext2D());
+        }
     }
 
+    /**
+     * Method used to tell that the keylistener is on, helps to manage the key
+     * strokes
+     *
+     * @param sprite
+     * @return
+     */
+    @Override
+    public boolean add(ISprite sprite) {
+        super.add(sprite);
+        // si le sprite est controle par le clavier
+        if (sprite instanceof EventHandler) {
+            System.out.println("registering keylistener");
+            // association de l'ecouteur sur le clavier avec le composant graphique principal
+            this.scene.setOnKeyPressed((EventHandler) sprite);
+        }
+        return true;
+    }
 }

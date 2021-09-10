@@ -76,7 +76,11 @@
         Code de Core décommenté : manque un constructeur dans la classe Heros.
         Constructeur de HerosSprite erroné, ajout d'un paramètre de type ILabyrinthe.
         Suite à une lecture générale du code, je réalise que je ne le maitrise pas. Le code initial est donc
-        entièrement commenté pour mieux le comprendre. Voir commit "documentation intégrale du code"
+        entièrement commenté pour mieux le comprendre. Voir commit "documentation intégrale du code".
+        Problème avec l'erreur suivante :
+*"JavaFX Application Thread" java.lang.NullPointerException*
+
+        Problème dans la méthode dessiner().
 
         
         
