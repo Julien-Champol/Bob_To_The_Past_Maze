@@ -81,6 +81,25 @@
 *"JavaFX Application Thread" java.lang.NullPointerException*
 
         Problème dans la méthode dessiner().
+## 11/09 :
+#####   Reprise exercice 15
+        Bug d'écran blanc réglé avec l'ajouyt de la condition if dans la boucle suivante :
+*for (var s : this.sprites) {
+            if (s.getClass().toString().equals("vue2D.sprites.HerosSprite.java")) {
+                tampon.drawImage(heros, s.getPosition().getX() * unite, s.getPosition().getY() * unite);
+            }
+        }*
+
+        A ce stade, le héros n'est cependant pas affiché. 
+        Après plusieurs tests il est visible que la condition if est erronnée : 
+*vue2D.sprites.HerosSprite.java*  au lieu de *class vue2D.sprites.HerosSprite*
+         
+         On a toujours l'erreur du null pointer.
+         Après demande d'aide à un camarade, l'attribut null est detecté, la positionChoisie était initialisée mais pas la position de départ initialisée avec 
+*setPosition(ISalle)*
+
+        le déplacement est problématique, flèche du gauche et du haut ne fonctionne pas correctement.
+
 
         
         

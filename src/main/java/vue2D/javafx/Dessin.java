@@ -5,6 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
+import vue2D.sprites.HerosSprite;
 import vue2D.sprites.ISprite;
 
 /**
@@ -22,6 +23,7 @@ public class Dessin extends Canvas {
     private Image salleImage;
     private Image entree;
     private Image sortie;
+    private Image heros;
 
     /**
      * Parameterized constructor of the class
@@ -48,6 +50,7 @@ public class Dessin extends Canvas {
         salleImage = new Image("file:icons/ground.gif");
         entree = new Image("file:icons/groundP.gif");
         sortie = new Image("file:icons/sortie.gif");
+        heros = new Image("file:icons/link/LinkRunR1.gif");
     }
 
     /**

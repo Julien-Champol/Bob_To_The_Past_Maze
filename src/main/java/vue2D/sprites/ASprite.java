@@ -31,6 +31,15 @@ public abstract class ASprite implements ISprite {
     private Image spriteImage;
 
     /**
+     * spriteImage accessor
+     *
+     * @return
+     */
+    public Image getSpriteImage() {
+        return spriteImage;
+    }
+
+    /**
      * Parameterized constructor of the class
      *
      * @param monPersonnage the character
@@ -49,8 +58,8 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(spriteImage, monPersonnage.getPosition().getX(),
-                monPersonnage.getPosition().getY(), unite,
+        g.drawImage(spriteImage, monPersonnage.getPosition().getX() * unite,
+                monPersonnage.getPosition().getY() * unite, unite,
                 unite);
     }
 

@@ -25,6 +25,7 @@ public class Heros extends APersonnage {
      */
     public Heros(ISalle entree) {
         this.salleChoisie = entree;
+        this.setPosition(entree);
     }
 
     /**
@@ -42,5 +43,5 @@ public class Heros extends APersonnage {
             return this.getPosition();
         }
     }
-
+    
 }

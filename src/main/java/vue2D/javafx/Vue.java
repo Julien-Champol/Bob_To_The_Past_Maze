@@ -14,7 +14,7 @@ import vue2D.sprites.ISprite;
  * @author INFO Professors team
  */
 public class Vue extends AVue implements IVue {
-
+    
     Dessin dessin;
     ILabyrinthe labyrinthe;
     public Scene scene;
@@ -40,7 +40,8 @@ public class Vue extends AVue implements IVue {
         // recopie du fond (image); murs + salles
         dessin.dessinFond();
         dessin.dessinSalle();
-        for (var s : this) {
+        // dessin des sprites
+        for (ISprite s : this) {
             s.dessiner(dessin.getGraphicsContext2D());
         }
     }
