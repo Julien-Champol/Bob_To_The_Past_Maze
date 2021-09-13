@@ -9,8 +9,8 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- * Class repreenting data about a mase 
- * 
+ * Class repreenting data about a mase
+ *
  * @author INFO Professors team
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {

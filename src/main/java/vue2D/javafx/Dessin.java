@@ -1,11 +1,13 @@
 package vue2D.javafx;
 
 import java.util.Collection;
+import java.util.HashSet;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
-import vue2D.sprites.HerosSprite;
+import labyrinthe.ISalle;
+import labyrinthe.Salle;
 import vue2D.sprites.ISprite;
 
 /**
@@ -23,7 +25,7 @@ public class Dessin extends Canvas {
     private Image salleImage;
     private Image entree;
     private Image sortie;
-    private Image heros;
+    private Image mur;
 
     /**
      * Parameterized constructor of the class
@@ -50,7 +52,7 @@ public class Dessin extends Canvas {
         salleImage = new Image("file:icons/ground.gif");
         entree = new Image("file:icons/groundP.gif");
         sortie = new Image("file:icons/sortie.gif");
-        heros = new Image("file:icons/link/LinkRunR1.gif");
+        mur = new Image("file:icons/mur10.gif");
     }
 
     /**
@@ -72,6 +74,18 @@ public class Dessin extends Canvas {
                 tampon.drawImage(sortie, s.getX() * unite, s.getY() * unite);
             } else {
                 tampon.drawImage(salleImage, s.getX() * unite, s.getY() * unite);
+                /*
+                HashSet<ISalle> murs = new HashSet<>();
+                murs.add(new Salle(s.getX() + 1, s.getY()));
+                murs.add(new Salle(s.getX() - 1, s.getY()));
+                murs.add(new Salle(s.getX(), s.getY() + 1));
+                murs.add(new Salle(s.getX(), s.getY() - 1));
+                for (var actu : murs) {
+                    if (!this.labyrinthe.contains(actu)) {
+                        System.out.println("salu");
+                        tampon.drawImage(mur, actu.getX() * unite, actu.getY() * unite);
+                    }
+                }*/
             }
         }
     }

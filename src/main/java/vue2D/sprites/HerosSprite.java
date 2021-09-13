@@ -23,7 +23,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     /**
      * the Hero our sprite is linked to
      */
-    private Heros monHeros;
+    private final Heros monHeros;
 
     /**
      * Parameterized constructor of the HerosSPrite class
@@ -49,18 +49,22 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() - 1, this.getPosition().getY());
                 this.setPosition(new Salle(this.getPosition().getX() - 1, this.getPosition().getY()));
                 this.setCoordonnees(this.getPosition().getX() - 1, this.getPosition().getY());
+                break;
             case RIGHT:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() + 1, this.getPosition().getY());
                 this.setPosition(new Salle(this.getPosition().getX() + 1, this.getPosition().getY()));
                 this.setCoordonnees(this.getPosition().getX() + 1, this.getPosition().getY());
+                break;
             case UP:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX(), this.getPosition().getY() - 1);
                 this.setPosition(new Salle(this.getPosition().getX(), this.getPosition().getY() - 1));
                 this.setCoordonnees(this.getPosition().getX(), this.getPosition().getY() - 1);
+                break;
             case DOWN:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX(), this.getPosition().getY() + 1);
                 this.setPosition(new Salle(this.getPosition().getX(), this.getPosition().getY() + 1));
                 this.setCoordonnees(this.getPosition().getX(), this.getPosition().getY() + 1);
+                break;
         }
     }
 }

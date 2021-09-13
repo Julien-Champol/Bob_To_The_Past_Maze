@@ -99,6 +99,14 @@
 *setPosition(ISalle)*
 
         le déplacement est problématique, flèche du gauche et du haut ne fonctionne pas correctement.
+## 13/09
+####    Reprise exercice 15
+        Correction du déplacement vers le haut et la gauche. Relecture de la méthode salleAccessibles(IPersonnage).
+        Le problème se situait dans le switch de la méthode handle(KeyEvent), les breaks étainet absents.
+        A ce stade le héros n'a aucune contrainte de déplacement et les murs du labyrinthe ne sont pas dessinés.
+        Un premier code de dessin des murs est réalisé et commenté, n'étant pas encore arrivé à la question 29.
+####    Réalisation exercice 16
+        Un problème de conception se présente : gérer le déplacement des monstres dans monstreSprite.
 
 
         

@@ -9,6 +9,7 @@ import personnages.IPersonnage;
 import vue2D.IVue;
 import vue2D.sprites.HerosSprite;
 import vue2D.sprites.ISprite;
+import vue2D.sprites.MonstreSprite;
 
 /**
  * Class giving the fundamental methods so that the code can run
@@ -39,6 +40,27 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h, labyrinthe);
         vue.add(this.heros);
+        //creation des monstres
+        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
+        m = new personnages.Monstre(labyrinthe.getSortie());
+        vue.add(new MonstreSprite(m, labyrinthe));
     }
 
     /**

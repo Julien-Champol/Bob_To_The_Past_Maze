@@ -21,14 +21,14 @@ Objectifs réalisés :
     - [X] Exercice 9  
   <br/> 
 
-- [ ] Objectif 3 : déplacer des personnages
+- [X] Objectif 3 : déplacer des personnages
   
     - [X] Exercice 10
     - [X] Exercice 11
     - [X] Exercice 12
     - [X] Exercice 13
     - [X] Exercice 14
-    - [ ] Exercice 15  
+    - [X] Exercice 15  
   <br/>
 
 - [ ] Objectif 4 : monstres (polymorphisme sur les personnages)
