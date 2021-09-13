@@ -9,7 +9,6 @@ import java.util.Collection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 import personnages.IPersonnage;
 
 /**

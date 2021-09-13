@@ -107,6 +107,13 @@
         Un premier code de dessin des murs est réalisé et commenté, n'étant pas encore arrivé à la question 29.
 ####    Réalisation exercice 16
         Un problème de conception se présente : gérer le déplacement des monstres dans monstreSprite.
+        De plus, le déplacement du joueur fonctionne mal, il peut se déplacer n'importe où.
+        Phénomène étrange lorsque l'instruction setPosition(salleChoisie) est placée deux fois dans le code :
+        dans la méthode faitSonChoix(Collection<ISalle>) et dans la méthode handle(KeyEvent), le déplacement fonctionne correctement.
+####    Réalisation exercice 17
+        Le déplacement des monstres ne fonctionnent pas, après les avoir placés à la sortie et avoir implémenté les deux classes,
+        ils ne se déplacent pas.
+
 
 
         

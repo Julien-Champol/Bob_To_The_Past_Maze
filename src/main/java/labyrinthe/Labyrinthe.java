@@ -62,7 +62,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     /**
      * Method used to return the accessibles room for the player
      *
-     * @param bob the player's room
+     * @param bob the character
      * @return a collection of rooms
      */
     @Override
@@ -73,9 +73,9 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         analyse.add(new Salle(bob.getPosition().getX(), bob.getPosition().getY() + 1));
         analyse.add(new Salle(bob.getPosition().getX(), bob.getPosition().getY() - 1));
         analyse.add(new Salle(bob.getPosition().getX() - 1, bob.getPosition().getY()));
-        analyse.add(new Salle(bob.getPosition().getX() + 1, bob.getPosition().getY() + 1));
+        analyse.add(new Salle(bob.getPosition().getX() + 1, bob.getPosition().getY()));
         for (var salle : analyse) {
-            if (actu.estAdjacente(salle)) {
+            if (this.contains(salle) && actu.estAdjacente(salle)) {
                 sallesAccessibles.add(salle);
             }
         }

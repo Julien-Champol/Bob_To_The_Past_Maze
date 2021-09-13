@@ -45,22 +45,6 @@ public class Core {
         vue.add(new MonstreSprite(m, labyrinthe));
         m = new personnages.Monstre(labyrinthe.getSortie());
         vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
     }
 
     /**

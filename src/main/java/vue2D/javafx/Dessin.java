@@ -74,7 +74,6 @@ public class Dessin extends Canvas {
                 tampon.drawImage(sortie, s.getX() * unite, s.getY() * unite);
             } else {
                 tampon.drawImage(salleImage, s.getX() * unite, s.getY() * unite);
-                /*
                 HashSet<ISalle> murs = new HashSet<>();
                 murs.add(new Salle(s.getX() + 1, s.getY()));
                 murs.add(new Salle(s.getX() - 1, s.getY()));
@@ -82,10 +81,9 @@ public class Dessin extends Canvas {
                 murs.add(new Salle(s.getX(), s.getY() - 1));
                 for (var actu : murs) {
                     if (!this.labyrinthe.contains(actu)) {
-                        System.out.println("salu");
                         tampon.drawImage(mur, actu.getX() * unite, actu.getY() * unite);
                     }
-                }*/
+                }
             }
         }
     }

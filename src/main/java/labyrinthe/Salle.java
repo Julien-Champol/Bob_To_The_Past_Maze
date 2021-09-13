@@ -57,8 +57,8 @@ public class Salle implements ISalle {
      */
     @Override
     public boolean estAdjacente(ISalle autre) {
-        return !this.equals(autre) && (this.x == autre.getX() + 1 || this.x == autre.getX() - 1 || this.x == autre.getX())
-                || (this.y == autre.getY() + 1 || this.y == autre.getY() - 1 || this.y == autre.getY());
+        return !this.equals(autre) && ((this.x == autre.getX() + 1 || this.x == autre.getX() - 1 || this.x == autre.getX())
+                || (this.y == autre.getY() + 1 || this.y == autre.getY() - 1 || this.y == autre.getY()));
     }
 
     /**

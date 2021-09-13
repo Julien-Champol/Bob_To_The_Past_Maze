@@ -24,7 +24,6 @@ public class Heros extends APersonnage {
      * @param entree
      */
     public Heros(ISalle entree) {
-        this.salleChoisie = entree;
         this.setPosition(entree);
     }
 
@@ -38,10 +37,11 @@ public class Heros extends APersonnage {
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if (sallesAccessibles.contains(salleChoisie)) {
+            //this.setPosition(salleChoisie);
             return salleChoisie;
         } else {
             return this.getPosition();
         }
     }
-    
+
 }

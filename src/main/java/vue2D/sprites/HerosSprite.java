@@ -25,6 +25,8 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
      */
     private final Heros monHeros;
 
+    private ILabyrinthe laby;
+
     /**
      * Parameterized constructor of the HerosSPrite class
      *
@@ -33,7 +35,8 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
      */
     public HerosSprite(IPersonnage monPerso, ILabyrinthe laby) {
         super(monPerso, new Image("file:icons/link/LinkRunR1.gif"));
-        this.monHeros = new Heros(laby.getEntree());
+        this.monHeros = (Heros)monPerso;
+        this.laby = laby;
     }
 
     /**
@@ -47,23 +50,27 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         switch (event.getCode()) {
             case LEFT:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() - 1, this.getPosition().getY());
-                this.setPosition(new Salle(this.getPosition().getX() - 1, this.getPosition().getY()));
-                this.setCoordonnees(this.getPosition().getX() - 1, this.getPosition().getY());
+                /*this.setPosition(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)));
+                this.setCoordonnees(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getX(),
+                        this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getY());*/
                 break;
             case RIGHT:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() + 1, this.getPosition().getY());
-                this.setPosition(new Salle(this.getPosition().getX() + 1, this.getPosition().getY()));
-                this.setCoordonnees(this.getPosition().getX() + 1, this.getPosition().getY());
+                /*this.setPosition(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)));
+                this.setCoordonnees(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getX(),
+                        this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getY());*/
                 break;
             case UP:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX(), this.getPosition().getY() - 1);
-                this.setPosition(new Salle(this.getPosition().getX(), this.getPosition().getY() - 1));
-                this.setCoordonnees(this.getPosition().getX(), this.getPosition().getY() - 1);
+                /*this.setPosition(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)));
+                this.setCoordonnees(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getX(),
+                        this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getY());*/
                 break;
             case DOWN:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX(), this.getPosition().getY() + 1);
-                this.setPosition(new Salle(this.getPosition().getX(), this.getPosition().getY() + 1));
-                this.setCoordonnees(this.getPosition().getX(), this.getPosition().getY() + 1);
+                /*this.setPosition(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)));
+                this.setCoordonnees(this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getX(),
+                        this.monHeros.faitSonChoix(laby.sallesAccessibles(monHeros)).getY());*/
                 break;
         }
     }

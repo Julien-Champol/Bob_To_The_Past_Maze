@@ -5,9 +5,7 @@
  */
 package personnages;
 
-import java.util.Collection;
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 
 /**
  * Abstract class representing data about any character, basic structure for the
@@ -19,12 +17,6 @@ public abstract class APersonnage implements IPersonnage {
 
     //La salle où le joueur se trouve
     private ISalle positionCourante;
-
-    // renvoie une salle parmi sallesAccesibles
-    @Override
-    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     // renvoie sa position courante
     @Override

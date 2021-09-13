@@ -5,9 +5,7 @@
  */
 package personnages;
 
-import static java.lang.Math.random;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Random;
 import labyrinthe.ISalle;
 

@@ -5,10 +5,9 @@
  */
 package vue2D.sprites;
 
-import javafx.event.EventHandler;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import labyrinthe.ILabyrinthe;
+import labyrinthe.ISalle;
 import personnages.IPersonnage;
 import personnages.Monstre;
 
@@ -34,10 +33,16 @@ public class MonstreSprite extends ASprite {
         super(monMonstre, new Image("file:icons/monstre1.gif"));
         this.monMonstre = new Monstre(laby.getSortie());
     }
-    
+
+    /**
+     * Method overrided so that setPosition and setCoordonnees are working the
+     * same way for the monsters
+     *
+     * @param s
+     */
     @Override
     public void setPosition(ISalle s) {
-        this.spriteX = x;
-        this.spriteY = y;
+        this.monMonstre.setPosition(s);
+        this.setCoordonnees(s.getX(), s.getY());
     }
 }
