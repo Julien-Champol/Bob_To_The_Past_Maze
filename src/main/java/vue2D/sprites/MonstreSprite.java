@@ -33,16 +33,4 @@ public class MonstreSprite extends ASprite {
         super(monMonstre, new Image("file:icons/monstre1.gif"));
         this.monMonstre = new Monstre(laby.getSortie());
     }
-
-    /**
-     * Method overrided so that setPosition and setCoordonnees are working the
-     * same way for the monsters
-     *
-     * @param s
-     */
-    @Override
-    public void setPosition(ISalle s) {
-        this.monMonstre.setPosition(s);
-        this.setCoordonnees(s.getX(), s.getY());
-    }
 }

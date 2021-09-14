@@ -37,7 +37,6 @@ public class Heros extends APersonnage {
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if (sallesAccessibles.contains(salleChoisie)) {
-            //this.setPosition(salleChoisie);
             return salleChoisie;
         } else {
             return this.getPosition();

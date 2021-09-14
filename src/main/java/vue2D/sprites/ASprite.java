@@ -19,7 +19,7 @@ import personnages.IPersonnage;
  */
 public abstract class ASprite implements ISprite {
 
-    private IPersonnage monPersonnage;
+    public IPersonnage monPersonnage;
 
     private int spriteX;
 
@@ -65,13 +65,13 @@ public abstract class ASprite implements ISprite {
     /**
      * Method used to set the coordinates of the sprite
      *
-     * @param x sprite's absciss
-     * @param y sprite's ordinate
+     * @param xpix
+     * @param ypix
      */
     @Override
-    public void setCoordonnees(int x, int y) {
-        this.spriteX = x;
-        this.spriteY = y;
+    public void setCoordonnees(int xpix, int ypix) {
+        this.spriteX = xpix;
+        this.spriteY = ypix;
     }
 
     /**
@@ -101,7 +101,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        return this.faitSonChoix(sallesAccessibles);
+        return this.monPersonnage.faitSonChoix(sallesAccessibles);
     }
 
     /**

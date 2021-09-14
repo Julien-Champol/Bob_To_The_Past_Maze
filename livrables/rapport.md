@@ -100,7 +100,7 @@
 
         le déplacement est problématique, flèche du gauche et du haut ne fonctionne pas correctement.
 ## 13/09
-####    Reprise exercice 15
+#####   Reprise exercice 15
         Correction du déplacement vers le haut et la gauche. Relecture de la méthode salleAccessibles(IPersonnage).
         Le problème se situait dans le switch de la méthode handle(KeyEvent), les breaks étainet absents.
         A ce stade le héros n'a aucune contrainte de déplacement et les murs du labyrinthe ne sont pas dessinés.
@@ -112,7 +112,20 @@
         dans la méthode faitSonChoix(Collection<ISalle>) et dans la méthode handle(KeyEvent), le déplacement fonctionne correctement.
 ####    Réalisation exercice 17
         Le déplacement des monstres ne fonctionnent pas, après les avoir placés à la sortie et avoir implémenté les deux classes,
-        ils ne se déplacent pas.
+        ils ne se déplacent pas, le code de déplacement du joueur est suspect, trop complexe par rapport aux méthodes fournies.
+        Avant d'aller plus loin dans les exercices, il faut reprendre le code existant.
+## 14/09
+#####   Reprise exercice 17 et correction du code existant
+        Problème de déplacement trouvé : la ligne 104 de ASprite était la suivante :
+*return this.faitSonChoix(sallesAccessibles);*
+        Cette ligne ne renvoyer rien car faitSonChoix n'était pas définie.
+*return this.monPersonnage.faitSonChoix(sallesAccessibles)*
+        Il fallait pointer sur la classe où elle est définie, c'est-à-dire la classe IPersonnage.
+        Reprise du déplacement du monstre à présent, suppression du Override de setPosition dans monstreSprite, le déplacement des monstres est fonctionnel.
+        Les exercices 16 et 17 sont réalisés.
+####    Réalisation exercice 18
+
+
 
 
 

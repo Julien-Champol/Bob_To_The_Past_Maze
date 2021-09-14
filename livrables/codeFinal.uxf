@@ -113,7 +113,7 @@ ExceptionInvalidFile
 + faitSonChoix(Collection &lt;ISalle &gt;) : ISalle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2230</x><y>249</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1988</x><y>539</y><w>260</w><h>240</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ASprite
 --
-- monPersonnage : IPersonnage
++ monPersonnage : IPersonnage
 - spriteX : int
 - spriteY : int
 - unite : int
@@ -128,7 +128,6 @@ ASprite
 + getSpriteY() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2240</x><y>579</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2360</x><y>655</y><w>260</w><h>100</h></coordinates><panel_attributes>HeroSprite
 --
 - monHeros : Heros
-- laby : ILabyrinthe
 --
 + HeroSprite(IPersonnage, ILabyrinthe)
 + handle(KeyEvent) : void

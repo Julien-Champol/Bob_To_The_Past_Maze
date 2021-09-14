@@ -34,7 +34,7 @@ Objectifs réalisés :
 - [ ] Objectif 4 : monstres (polymorphisme sur les personnages)
   
   - [X] Exercice 16
-  - [ ] Exercice 17
+  - [X] Exercice 17
   - [ ] Exercice 18  
   <br/>
 
