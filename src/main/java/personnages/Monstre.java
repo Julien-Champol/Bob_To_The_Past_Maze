@@ -36,6 +36,11 @@ public class Monstre extends APersonnage {
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         Random rmd = new Random();
         int indice = rmd.nextInt(sallesAccessibles.size());
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
         return (ISalle) sallesAccessibles.toArray()[indice];
     }
 }

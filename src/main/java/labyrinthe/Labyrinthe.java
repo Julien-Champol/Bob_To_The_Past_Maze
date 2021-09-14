@@ -9,25 +9,25 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- * Class repreenting data about a mase
+ * Classe représentant les données d'un labyrintheF
  *
  * @author INFO Professors team
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
-    //Mase entry
+    //L'entrée
     protected ISalle entree;
-    //Mase exit
+    //La sortie
     protected ISalle sortie;
-    //Width
+    //largeur de la grille
     private int largeur;
-    //Height
+    //hauteur de la grille
     private int hauteur;
 
     /**
-     * Method used to create a mase from a given file.
+     * Méthode permettant de créer un labyrinthe à partir d'un fichier
      *
-     * @param file the file to read.
+     * @param file le fichier à lire
      * @throws outils.ExceptionInvalidFile
      */
     @Override
@@ -42,6 +42,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
             // entrée et sortie
             int x = f.lireNombre();
             int y = f.lireNombre();
+            // l'entrée et la sortie font partie des salles
             entree = new Salle(x, y);
             this.add(entree);
             x = f.lireNombre();
@@ -60,10 +61,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * Method used to return the accessibles room for the player
+     * Méthde retournant les salles accessibles à un personnage
      *
-     * @param bob the character
-     * @return a collection of rooms
+     * @param bob le personnage
+     * @return aune collection contenant les salles en question
      */
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
@@ -83,7 +84,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * The mase's entry accessor
+     * Accesseur sur l'entrée
      *
      * @return
      */
@@ -93,7 +94,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * The mase's exit accessor
+     * Accesseur sur la sortie
      *
      * @return
      */
@@ -103,10 +104,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * Method returning possible paths between u and v
+     * Méthode retournant les chemins possible entre deux salles
      *
-     * @param u
-     * @param v
+     * @param u première salle
+     * @param v seconde salle
      * @return
      */
     @Override
@@ -115,7 +116,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * The mase's width accessor
+     * Accesseur sur la largeur
      *
      * @return
      */
@@ -125,7 +126,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * The mase's height accessor
+     * Accesseur sur la hauteur
      *
      * @return
      */

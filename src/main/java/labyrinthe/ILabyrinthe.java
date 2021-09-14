@@ -5,8 +5,8 @@ import java.util.Collection;
 import personnages.IPersonnage;
 
 /**
- * Interface giving structure for the mase's code
- * 
+ * Interface donnant la structure du labyrinthe
+ *
  * @author INFO Professors team
  */
 public interface ILabyrinthe extends Collection<ISalle> {

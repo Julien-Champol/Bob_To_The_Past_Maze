@@ -41,7 +41,7 @@ public class Dessin extends Canvas {
         tampon = this.getGraphicsContext2D();
         chargementImages();
         dessinFond();
-        dessinSalle();
+        dessinSalleEtMur();
     }
 
     /**
@@ -66,7 +66,8 @@ public class Dessin extends Canvas {
     /**
      * Method used to draw the rooms of the mase.
      */
-    public void dessinSalle() {
+    public void dessinSalleEtMur() {
+        // dessin des salles
         for (var s : this.labyrinthe) {
             if (s.equals(labyrinthe.getEntree())) {
                 tampon.drawImage(entree, s.getX() * unite, s.getY() * unite);
@@ -74,17 +75,21 @@ public class Dessin extends Canvas {
                 tampon.drawImage(sortie, s.getX() * unite, s.getY() * unite);
             } else {
                 tampon.drawImage(salleImage, s.getX() * unite, s.getY() * unite);
-                HashSet<ISalle> murs = new HashSet<>();
-                murs.add(new Salle(s.getX() + 1, s.getY()));
-                murs.add(new Salle(s.getX() - 1, s.getY()));
-                murs.add(new Salle(s.getX(), s.getY() + 1));
-                murs.add(new Salle(s.getX(), s.getY() - 1));
-                for (var actu : murs) {
-                    if (!this.labyrinthe.contains(actu)) {
-                        tampon.drawImage(mur, actu.getX() * unite, actu.getY() * unite);
-                    }
-                }
             }
+        }
+        // dessin des murs
+        HashSet<ISalle> murs = new HashSet<>();
+        // on calcule les coordonnées de toutes les salles possibles
+        for (int i = 0; i < this.labyrinthe.getLargeur(); i++) {
+            for (int j = 0; j < this.labyrinthe.getHauteur(); j++) {
+                murs.add(new Salle(i, j));
+            }
+        }
+        // on retire les salles existentes
+        murs.removeAll(this.labyrinthe);
+        // reste les murs
+        for (var actu : murs) {
+            tampon.drawImage(mur, actu.getX() * unite, actu.getY() * unite);
         }
     }
 }

@@ -12,7 +12,7 @@ import vue2D.sprites.ISprite;
 import vue2D.sprites.MonstreSprite;
 
 /**
- * Class giving the fundamental methods so that the code can run
+ * Classe permettant l'initialisation du jeu et la mise à jour de la vue
  *
  * @author INFO Professors team
  */
@@ -22,7 +22,7 @@ public class Core {
     ILabyrinthe labyrinthe;
 
     /**
-     * Method used to initialize the mase
+     * Méthode utilisée pour initialiser le labyrinthe à partir d'un fichier
      */
     protected void initLabyrinthe() {
         // creation du labyrinthe
@@ -31,7 +31,7 @@ public class Core {
     }
 
     /**
-     * Method used to initilaize the sprites
+     * Méthode d'initialisation des sprites
      *
      * @param vue
      */
@@ -66,9 +66,9 @@ public class Core {
     }
 
     /**
-     * The game's loop
+     * La boucle de jeu
      *
-     * @param vue
+     * @param vue la vue à mettre à jour
      */
     protected void jeu(IVue vue) {
         // boucle principale
@@ -84,8 +84,8 @@ public class Core {
             boolean collision = false;
             ISprite monstre = null;
             for (ISprite p : vue) {
-                if (p != heros) {
-                    if (p.getPosition() == heros.getPosition()) {
+                if (!p.equals(heros)) {
+                    if (p.getPosition().equals(heros.getPosition())) {
                         System.out.println("Collision !!");
                         collision = true;
                         monstre = p;
@@ -105,11 +105,10 @@ public class Core {
     }
 
     /**
-     * Method used to load the mase, from a default file if the one given in
-     * parameters doesn't work, if this one doesn't work either we quit the
-     * program.
+     * Méthode de création du labyrinthe à partir d'un labyrinthe par défaut,
+     * quitte le programme si ce-dernier est invalide
      *
-     * @param fic the file we load the mase from
+     * @param fic le fichier à partir duquel nous chargeons le fichier
      */
     private void chargementLaby(String fic) {
         try {
@@ -117,6 +116,7 @@ public class Core {
         } catch (IOException ex) {
             try {
                 System.out.println("!!Fichier invalide, chargement à partir du niveau 7!!");
+                //fichier de chargement par défaut
                 fic = "labys/level7.txt";
                 labyrinthe.creerLabyrinthe(fic);
             } catch (IOException e) {
@@ -127,9 +127,9 @@ public class Core {
     }
 
     /**
-     * Method used to put the program to sleep for nb miliseconds
+     * Méthode mettant le programme en pause pendant nb milisecondes
      *
-     * @param nb the number of miliseconds
+     * @param nb le nombre de milisecondesF
      */
     protected void temporisation(int nb) {
         try {

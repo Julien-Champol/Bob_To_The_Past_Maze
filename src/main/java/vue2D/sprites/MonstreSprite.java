@@ -7,7 +7,6 @@ package vue2D.sprites;
 
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
-import labyrinthe.ISalle;
 import personnages.IPersonnage;
 import personnages.Monstre;
 

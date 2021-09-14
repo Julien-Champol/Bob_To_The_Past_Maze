@@ -1,6 +1,6 @@
 package vue2D;
 
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import vue2D.sprites.ISprite;
 
 /**
@@ -8,5 +8,5 @@ import vue2D.sprites.ISprite;
  *
  * @author INFO Professors team
  */
-public abstract class AVue extends ArrayList<ISprite> implements IVue {
+public abstract class AVue extends CopyOnWriteArrayList<ISprite> implements IVue {
 }

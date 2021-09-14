@@ -123,7 +123,21 @@
         Il fallait pointer sur la classe où elle est définie, c'est-à-dire la classe IPersonnage.
         Reprise du déplacement du monstre à présent, suppression du Override de setPosition dans monstreSprite, le déplacement des monstres est fonctionnel.
         Les exercices 16 et 17 sont réalisés.
-####    Réalisation exercice 18
+####    Réalisation exercice 18 
+#####   Rajout d'une temporisation pour les monstres
+        Rajout des lignes de code suivantes dans faitSonChoix(Collection<ISalle>) de Monstre :
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
+        Le jeu est plus aggréable à regarder de cette manière.
+        La vue hérite à présent de CopyOnWriteArrayList.
+        Les collisions entre le personnage et les monstres ne sont pas fonctionnels, on remplace les == et != de core par des appels à .equals.
+        Avant d'aller plus loin, un nettoyage du code, la mise à jour du diagramme de classe et une documentation uniforme s'impose.
+
 
 
 

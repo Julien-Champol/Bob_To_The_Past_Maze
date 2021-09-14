@@ -6,23 +6,23 @@
 package labyrinthe;
 
 /**
- * Class representing data about a room in a mase
+ * Classe représentant des données sur les salles
  *
  * @author jchampol
  */
 public class Salle implements ISalle {
 
-    //absciss
+    //abscisse
     private int x;
 
-    //ordinate
+    //ordonnée
     private int y;
 
     /**
-     * Parameterized constructor of the class
+     * Constructeur paramétré de la classe
      *
-     * @param x the room's absciss
-     * @param y the room's ordinate
+     * @param x l'abscisse de la salle
+     * @param y l'ordonnée de la salle
      */
     public Salle(int x, int y) {
         this.x = x;
@@ -30,7 +30,7 @@ public class Salle implements ISalle {
     }
 
     /**
-     * x parameter accessor
+     * accesseur sur l'abscisse
      *
      * @return
      */
@@ -40,7 +40,7 @@ public class Salle implements ISalle {
     }
 
     /**
-     * y parameter accessor
+     * accesseur sur l'ordonnée
      *
      * @return
      */
@@ -50,10 +50,10 @@ public class Salle implements ISalle {
     }
 
     /**
-     * Method used to tell if two rooms are adjacents
+     * Méthode d'identification de deux pièces adjacentes
      *
-     * @param autre the other room
-     * @return true iff the two rooms are adjacents
+     * @param autre la salle comparée
+     * @return vrai ssi salles adjacentes
      */
     @Override
     public boolean estAdjacente(ISalle autre) {
@@ -62,9 +62,9 @@ public class Salle implements ISalle {
     }
 
     /**
-     * Method used to know if two rooms are the same, useful in tests.
+     * Méthode détectant l'égalité  entre deux salles
      *
-     * @return true iff the two rooms are the same.
+     * @return vrai ssi les deux salles sont les mêmes 
      */
     @Override
     public boolean equals(Object obj) {
@@ -88,7 +88,7 @@ public class Salle implements ISalle {
     }
 
     /**
-     * The class hashing method, has to be overriden
+     * Méthode de hachage, override obligatoire
      *
      * @return
      */
