@@ -8,14 +8,21 @@ import labyrinthe.Labyrinthe;
 import labyrinthe.Salle;
 
 /**
- * Class representing data about a file representation of a mase
+ * Classe représentant des données sur la représentation d'un labyrinthe par un
+ * fichier
  *
  * @author INFO Professors team
  */
 public class Fichier {
 
+    // Scanner permettant la lecture d'un fichier
     Scanner sc = null;
 
+    /**
+     * Constructeur paramétré de la classe Fichier
+     *
+     * @param nomFichier le chemin d'accès au fichier
+     */
     public Fichier(String nomFichier) {
         try {
             sc = new Scanner(new File(nomFichier));
@@ -34,18 +41,21 @@ public class Fichier {
     }
 
     /**
-     * Method used to test all the coordinates contained in a file
+     * Méthode testant la validité de toutes les coordonnées d'un fichier
      *
-     * @param f The file we are reading
-     * @return true iff all the file's coordinates are valid ones
+     * @param f le fichier en cours de lecture
+     * @return vrai ssi les coordonnées sont valides (sup ou égal à 0, inférieur
+     * à largeur/hauteur)
      * @throws outils.ExceptionInvalidFile
      */
     public static boolean testCoordonneesSallesFichier(File f) throws ExceptionInvalidFile {
+        // initialisation d'un labyrinthe et de l'instance de Fichier le représentant
         Labyrinthe test = new Labyrinthe();
         Fichier fic = new Fichier("labys/" + f.getName());
-
+        // lecture de la hauteur et de la largeur
         int hauteur = fic.lireNombre();
         int largeur = fic.lireNombre();
+        // lecture successive des coordonnées 
         int x = fic.lireNombre();
         int y = fic.lireNombre();
         while (x != -1 || y != -1) {
@@ -53,7 +63,7 @@ public class Fichier {
             x = fic.lireNombre();
             y = fic.lireNombre();
         }
-
+        // test successif des coordonnées 
         for (var s : test) {
             if (!(s.getX() >= 0 && s.getX() < largeur)
                     || !(s.getY() >= 0 && s.getY() < hauteur)) {
@@ -64,19 +74,17 @@ public class Fichier {
     }
 
     /**
-     * Method used to test all the rooms of a file and detect the duplicates
+     * Méthode testant la présence de doublons dans un fichierF
      *
-     * @param f the file to test
-     * @return true iff the files doesn't contain duplicates
+     * @param f le fichier à tester
+     * @return vrai ssi le fichier est sans doublons
      * @throws outils.ExceptionInvalidFile
      */
     public static boolean testDoublonsSallesFichier(File f) throws ExceptionInvalidFile {
-        //Labyrinthe test = new Labyrinthe();
-        //test.creerLabyrinthe("labys/" + f.getName());
-
+        // initialisation d'un labyrinthe et de l'instance de Fichier le représentant
         Labyrinthe test = new Labyrinthe();
         Fichier fic = new Fichier("labys/" + f.getName());
-
+        // lecture de la hauteur et de la largeurF
         int hauteur = fic.lireNombre();
         int largeur = fic.lireNombre();
         int x = fic.lireNombre();
@@ -86,7 +94,8 @@ public class Fichier {
             x = fic.lireNombre();
             y = fic.lireNombre();
         }
-
+        // comparaison contient les éléments du laby mais sans éventuels doublons
+        // si comparaison a une taille différente du labyrinthe, on a des doublons 
         Set comparaison = new HashSet(test);
         if (comparaison.size() != test.size()) {
             System.out.println("Contient des doublons : " + f.getName());
@@ -95,10 +104,10 @@ public class Fichier {
     }
 
     /**
-     * This method is used to call the test methods on a specified file name.
+     * Cette méthode appelle les méthodes de test à partir d'un nom de fichier
      *
-     * @param nomFichier the specified file
-     * @return true iff all the tests are passed
+     * @param nomFichier le fichier spécifiéF
+     * @return vrai ssi tous les tests passent
      * @throws outils.ExceptionInvalidFile
      */
     public static boolean testValide(String nomFichier) throws ExceptionInvalidFile {

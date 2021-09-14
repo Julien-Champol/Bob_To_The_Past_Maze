@@ -21,9 +21,7 @@ public class TestFichiersLabyrinthe {
     }
 
     /**
-     * The only invalid files that are not detected with this test are
-     * levelInvalide3.txt and levelInvalide4.txt because they are containing
-     * duplicates.
+     * Test des coordonées des salles
      *
      * @throws outils.ExceptionInvalidFile
      */
@@ -40,10 +38,7 @@ public class TestFichiersLabyrinthe {
     }
 
     /**
-     * Method used to detect duplicates.HashSets cannot contain duplicates, we
-     * convert our ArrayList into a HashSet if the sizes of our containers are
-     * differents, we have duplicates. This code is not a copy/paste but credits
-     * to :
+     * Test sur les doublons
      * https://www.it-swarm-fr.com/fr/java/supprimer-les-doublons-de-arraylist/973017982/
      *
      * @throws outils.ExceptionInvalidFile

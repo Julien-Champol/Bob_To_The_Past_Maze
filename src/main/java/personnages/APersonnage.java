@@ -8,8 +8,8 @@ package personnages;
 import labyrinthe.ISalle;
 
 /**
- * Abstract class representing data about any character, basic structure for the
- * heroes, the monsters and their respective sprites
+ * Classe abstraite apportant une structure supplémentaire pour représenter des
+ * données sur un personnage
  *
  * @author jchampol
  */

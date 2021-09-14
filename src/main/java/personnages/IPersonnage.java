@@ -4,7 +4,8 @@ import java.util.Collection;
 import labyrinthe.ISalle;
 
 /**
- * Interface providing structure to code the character
+ * Interface donnant une première structure pour la représentation des données
+ * d'un personnage
  *
  * @author INFO Professors team
  */

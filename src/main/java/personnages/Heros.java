@@ -9,30 +9,31 @@ import java.util.Collection;
 import labyrinthe.ISalle;
 
 /**
- * Class representing data about the hero.
+ * Classe représentant des données sur un héros
  *
  * @author jchampol
  */
 public class Heros extends APersonnage {
 
-    //The room the player has chosen
+    // La salle choisie par le joueur
     public ISalle salleChoisie;
 
     /**
-     * Parameterized constructor of the Heros class
+     * Constructeur paramétré de la classe Heros
      *
-     * @param entree
+     * @param entree la salle où le héros est placé en début de jeu
      */
     public Heros(ISalle entree) {
+        // placement du joueur à la première des positions qu'il occuperaF
         this.setPosition(entree);
     }
 
     /**
-     * Method used to return the room chosen by the player if it's accessible,
-     * else his current position
+     * Méthode retournant la salle choisie par le joueur si elle est accessible,
+     * sa position actuelle autrement
      *
-     * @param sallesAccessibles the accessibles room
-     * @return the room
+     * @param sallesAccessibles les salles accessibles
+     * @return la salle en question
      */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {

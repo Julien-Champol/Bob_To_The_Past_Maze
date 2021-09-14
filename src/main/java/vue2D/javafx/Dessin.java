@@ -11,27 +11,44 @@ import labyrinthe.Salle;
 import vue2D.sprites.ISprite;
 
 /**
- * Class representing data about drawing methods of the program
+ * Classe représentant des données sur les méthodes de dessin du jeu
  *
  * @author INFO Professors team
  */
 public class Dessin extends Canvas {
 
+    // les sprites à dessiner sur le labyrintheF
     private Collection<ISprite> sprites;
+
+    // le labyrinthe que l'on représente
     private ILabyrinthe labyrinthe;
+
+    // l'unite par laquelle on multiplie la taille de l'imageF
     private int unite = 15;
+
+    // l'instance de GraphicsContext qui nous permet de réaliser les dessins
     private GraphicsContext tampon;
+
+    // le sol
     private Image solImage;
+
+    // les salles
     private Image salleImage;
+
+    // l'entrée du labyrinthe
     private Image entree;
+
+    // la sortie du labyrinthe 
     private Image sortie;
+
+    // un mur
     private Image mur;
 
     /**
-     * Parameterized constructor of the class
+     * Constructeur paramétré de la classe Dessin
      *
-     * @param labyrinthe the mase that is being played
-     * @param sprites the heroes, walls ... sprites to draw
+     * @param labyrinthe la labyrinthe à représenter
+     * @param sprites les sprites à dessiner
      */
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
@@ -45,7 +62,7 @@ public class Dessin extends Canvas {
     }
 
     /**
-     * Method used to load the images from the icons folder.
+     * Méthode chargeant les images depuis le dossier icons/
      */
     public void chargementImages() {
         solImage = new Image("file:icons/pyramide.jpg");
@@ -56,7 +73,7 @@ public class Dessin extends Canvas {
     }
 
     /**
-     * Method used to draw the background image.
+     * Méthode de dessin de l'image de fond
      */
     public void dessinFond() {
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
@@ -64,7 +81,7 @@ public class Dessin extends Canvas {
     }
 
     /**
-     * Method used to draw the rooms of the mase.
+     * Méthode de dessin des salles et des murs
      */
     public void dessinSalleEtMur() {
         // dessin des salles

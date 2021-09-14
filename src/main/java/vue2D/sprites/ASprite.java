@@ -12,37 +12,33 @@ import labyrinthe.ISalle;
 import personnages.IPersonnage;
 
 /**
- * Abstract class giving basic structure to code the sprites, this class
- * associate a sprite and a character
+ * Classe abstraite rajoutant des éléments à la structure basique utilisée pour
+ * coder les sprites
  *
  * @author jchampol
  */
 public abstract class ASprite implements ISprite {
 
+    // le personnage auquel est associé le sprite
     public IPersonnage monPersonnage;
 
+    // l'abscisse du sprite
     private int spriteX;
 
+    // l'ordonnée du sprite
     private int spriteY;
 
+    // le nombre d'unités par lequel on multiplie la taille réelle de l'image
     private int unite = 15;
 
+    // l'image du sprite
     private Image spriteImage;
 
     /**
-     * spriteImage accessor
+     * Constructeur paramétré de la classe
      *
-     * @return
-     */
-    public Image getSpriteImage() {
-        return spriteImage;
-    }
-
-    /**
-     * Parameterized constructor of the class
-     *
-     * @param monPersonnage the character
-     * @param spriteImage his sprite
+     * @param monPersonnage le personnage
+     * @param spriteImage son sprite (image)
      */
     public ASprite(IPersonnage monPersonnage, Image spriteImage) {
         this.monPersonnage = monPersonnage;
@@ -50,10 +46,10 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Method used to draw an image at a specific location on the graphical
-     * window
+     * Méthode utilisée pour dessiner un sprite à l'endroit où se trouve le
+     * personnage qui lui est associé
      *
-     * @param g
+     * @param g instance de la classe GraphicsContext, indispensable
      */
     @Override
     public void dessiner(GraphicsContext g) {
@@ -63,19 +59,19 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Method used to set the coordinates of the sprite
+     * Méthode changeant les coordonnées d'un sprite
      *
      * @param xpix
      * @param ypix
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        this.spriteX = xpix;
-        this.spriteY = ypix;
+        this.spriteX = xpix * unite;
+        this.spriteY = ypix * unite;
     }
 
     /**
-     * spriteX accessor method
+     * accesseur sur spriteX
      *
      * @return spriteX
      */
@@ -84,7 +80,7 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * spriteY accessor method
+     * accesseur sur spriteY
      *
      * @return spriteY
      */
@@ -93,10 +89,10 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Method used to return the room chosen by the player if it's accessible,
-     * else his current position
+     * Méthode retournant la salle choisie par le joueur si elle est accessible,
+     * sa position actuelle autrement
      *
-     * @param sallesAccessibles the accessibles room
+     * @param sallesAccessibles les salles accessibles
      * @return the room
      */
     @Override
@@ -105,7 +101,7 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Returns the position of the player
+     * Retourne la position actuelle du joueur
      *
      * @return
      */
@@ -115,7 +111,7 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Sets the player's position
+     * Change la position actuelle du joueur
      *
      * @param s
      */

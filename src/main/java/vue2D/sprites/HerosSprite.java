@@ -14,22 +14,22 @@ import personnages.Heros;
 import personnages.IPersonnage;
 
 /**
- * Class representing data about the hero's sprite
+ * Classe représentant des données à propos de la classe HeroSprite
  *
  * @author jchampol
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
     /**
-     * the Hero our sprite is linked to
+     * le Hero qu'on est en train de représenter
      */
     private final Heros monHeros;
 
     /**
-     * Parameterized constructor of the HerosSPrite class
+     * Constructeur paramétré de HerosSprite
      *
-     * @param monPerso the IPersonnage
-     * @param laby the mase
+     * @param monPerso le personnage
+     * @param laby le labyrinthe
      */
     public HerosSprite(IPersonnage monPerso, ILabyrinthe laby) {
         super(monPerso, new Image("file:icons/link/LinkRunR1.gif"));
@@ -37,8 +37,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     }
 
     /**
-     * Method used to handle the moves of the hero, updating the salleChoisie
-     * attribute and moving the hero and the sprite
+     * Redéfinition de la méthode handle de EventHandler
      *
      * @param event
      */

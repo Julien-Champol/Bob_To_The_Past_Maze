@@ -4,7 +4,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import vue2D.sprites.ISprite;
 
 /**
- * Class representing data about a graphical view : here a list of sprites
+ * Classe représentant des données sur la vue qui est une collection de ISprite
  *
  * @author INFO Professors team
  */

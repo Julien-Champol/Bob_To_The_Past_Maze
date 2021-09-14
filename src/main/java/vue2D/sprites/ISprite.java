@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import personnages.IPersonnage;
 
 /**
- * Interface giving basic structure to move a sprite
+ * Interface donnant une structure de base pour coder les sprites
  *
  * @author INFO Professors team
  */

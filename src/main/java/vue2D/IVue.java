@@ -5,7 +5,7 @@ import java.util.Collection;
 import vue2D.sprites.ISprite;
 
 /**
-* Interface providing structure to code the view
+* Interface donnant une structure pour coder la vue du jeu
 * 
 * @author INFO Professors team
 */

@@ -11,22 +11,22 @@ import personnages.IPersonnage;
 import personnages.Monstre;
 
 /**
- * Class associating a sprite to a monster
+ * Classe associant un sprite à un sprite
  *
  * @author jchampol
  */
 public class MonstreSprite extends ASprite {
 
     /**
-     * the Hero our sprite is linked to
+     * le monstre que l'on représente
      */
-    private final Monstre monMonstre;
+    private Monstre monMonstre;
 
     /**
-     * Parameterized constructor of the HerosSPrite class
+     * Constructeur paramétré de la classe
      *
-     * @param monMonstre the monster being initialized
-     * @param laby the mase
+     * @param monMonstre le monstre à représenter
+     * @param laby le labyrinthe
      */
     public MonstreSprite(IPersonnage monMonstre, ILabyrinthe laby) {
         super(monMonstre, new Image("file:icons/monstre1.gif"));
