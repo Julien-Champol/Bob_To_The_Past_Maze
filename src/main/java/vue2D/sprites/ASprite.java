@@ -22,10 +22,10 @@ public abstract class ASprite implements ISprite {
     // le personnage auquel est associé le sprite
     public IPersonnage monPersonnage;
 
-    // l'abscisse du sprite
+    // l'abscisse du sprite, initialisé à l'abscisse du joueur
     private int spriteX;
 
-    // l'ordonnée du sprite
+    // l'ordonnée du sprite, initialisé à l'ordonnée du joueur
     private int spriteY;
 
     // le nombre d'unités par lequel on multiplie la taille réelle de l'image
@@ -33,6 +33,9 @@ public abstract class ASprite implements ISprite {
 
     // l'image du sprite
     private Image spriteImage;
+
+    // vrai ssi le personnage est en mouvement
+    public boolean enMouvement;
 
     /**
      * Constructeur paramétré de la classe
@@ -43,6 +46,8 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage monPersonnage, Image spriteImage) {
         this.monPersonnage = monPersonnage;
         this.spriteImage = spriteImage;
+        this.spriteX = monPersonnage.getPosition().getX();
+        this.spriteY = monPersonnage.getPosition().getY();
     }
 
     /**
@@ -53,16 +58,22 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(spriteImage, monPersonnage.getPosition().getX() * UNITE,
-                monPersonnage.getPosition().getY() * UNITE, UNITE,
-                UNITE);
+        int i;
+        int j;
+        for (i = this.spriteX; i <= monPersonnage.getPosition().getX() * UNITE; i++) {
+            for (j = this.spriteY; j <= monPersonnage.getPosition().getY() * UNITE; j++) {
+                g.drawImage(spriteImage, i, j, UNITE, UNITE);
+            }
+        }
+        setCoordonnees(monPersonnage.getPosition().getX(), monPersonnage.getPosition().getY());
+        enMouvement = false;
     }
 
     /**
      * Méthode changeant les coordonnées d'un sprite
      *
-     * @param xpix abscisse sprite
-     * @param ypix ordonnée sprite
+     * @param xpix abscisse sprite en pixels
+     * @param ypix ordonnée sprite en pixels
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {

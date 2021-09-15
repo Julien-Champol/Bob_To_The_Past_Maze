@@ -15,9 +15,7 @@ import personnages.IPersonnage;
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
-    /**
-     * le Hero qu'on est en train de représenter
-     */
+    // le Hero qu'on est en train de représenter
     private Heros monHeros;
 
     /**
@@ -38,6 +36,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
      */
     @Override
     public void handle(KeyEvent event) {
+        this.enMouvement = true;
         switch (event.getCode()) {
             case LEFT:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() - 1, this.getPosition().getY());

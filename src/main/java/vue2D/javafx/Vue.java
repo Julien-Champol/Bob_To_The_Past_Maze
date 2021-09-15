@@ -46,9 +46,9 @@ public class Vue extends AVue implements IVue {
         dessin.dessinFond();
         dessin.dessinSalleEtMur();
         // dessin des sprites
-        for (ISprite s : this) {
+        this.forEach(s -> {
             s.dessiner(dessin.getGraphicsContext2D());
-        }
+        });
     }
 
     /**
