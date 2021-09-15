@@ -29,7 +29,7 @@ public abstract class ASprite implements ISprite {
     private int spriteY;
 
     // le nombre d'unités par lequel on multiplie la taille réelle de l'image
-    private int unite = 15;
+    private final int UNITE = 15;
 
     // l'image du sprite
     private Image spriteImage;
@@ -53,9 +53,9 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(spriteImage, monPersonnage.getPosition().getX() * unite,
-                monPersonnage.getPosition().getY() * unite, unite,
-                unite);
+        g.drawImage(spriteImage, monPersonnage.getPosition().getX() * UNITE,
+                monPersonnage.getPosition().getY() * UNITE, UNITE,
+                UNITE);
     }
 
     /**
@@ -66,8 +66,8 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        this.spriteX = xpix * unite;
-        this.spriteY = ypix * unite;
+        this.spriteX = xpix * UNITE;
+        this.spriteY = ypix * UNITE;
     }
 
     /**

@@ -24,7 +24,7 @@ public class Dessin extends Canvas {
     private ILabyrinthe labyrinthe;
 
     // l'unite par laquelle on multiplie la taille de l'imageF
-    private int unite = 15;
+    private final int UNITE = 15;
 
     // l'instance de GraphicsContext qui nous permet de réaliser les dessins
     private GraphicsContext tampon;
@@ -53,8 +53,8 @@ public class Dessin extends Canvas {
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
         this.labyrinthe = labyrinthe;
-        setWidth(labyrinthe.getLargeur() * unite);
-        setHeight(labyrinthe.getHauteur() * unite);
+        setWidth(labyrinthe.getLargeur() * UNITE);
+        setHeight(labyrinthe.getHauteur() * UNITE);
         tampon = this.getGraphicsContext2D();
         chargementImages();
         dessinFond();
@@ -76,8 +76,8 @@ public class Dessin extends Canvas {
      * Méthode de dessin de l'image de fond
      */
     public void dessinFond() {
-        tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
-                unite * labyrinthe.getHauteur());
+        tampon.drawImage(solImage, 0, 0, UNITE * labyrinthe.getLargeur(),
+                UNITE * labyrinthe.getHauteur());
     }
 
     /**
@@ -87,11 +87,11 @@ public class Dessin extends Canvas {
         // dessin des salles
         for (var s : this.labyrinthe) {
             if (s.equals(labyrinthe.getEntree())) {
-                tampon.drawImage(entree, s.getX() * unite, s.getY() * unite);
+                tampon.drawImage(entree, s.getX() * UNITE, s.getY() * UNITE);
             } else if (s.equals(labyrinthe.getSortie())) {
-                tampon.drawImage(sortie, s.getX() * unite, s.getY() * unite);
+                tampon.drawImage(sortie, s.getX() * UNITE, s.getY() * UNITE);
             } else {
-                tampon.drawImage(salleImage, s.getX() * unite, s.getY() * unite);
+                tampon.drawImage(salleImage, s.getX() * UNITE, s.getY() * UNITE);
             }
         }
         // dessin des murs
@@ -106,7 +106,7 @@ public class Dessin extends Canvas {
         murs.removeAll(this.labyrinthe);
         // reste les murs
         for (var actu : murs) {
-            tampon.drawImage(mur, actu.getX() * unite, actu.getY() * unite);
+            tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
         }
     }
 }

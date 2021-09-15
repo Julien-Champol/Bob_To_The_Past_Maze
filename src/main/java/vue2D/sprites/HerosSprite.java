@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vue2D.sprites;
 
 import javafx.event.EventHandler;
@@ -23,7 +18,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     /**
      * le Hero qu'on est en train de représenter
      */
-    private final Heros monHeros;
+    private Heros monHeros;
 
     /**
      * Constructeur paramétré de HerosSprite

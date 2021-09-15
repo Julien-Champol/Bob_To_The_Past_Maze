@@ -62,9 +62,10 @@ public class Salle implements ISalle {
     }
 
     /**
-     * Méthode détectant l'égalité  entre deux salles
+     * Méthode détectant l'égalité entre deux salles
      *
-     * @return vrai ssi les deux salles sont les mêmes 
+     * @param obj
+     * @return vrai ssi les deux salles sont identiques
      */
     @Override
     public boolean equals(Object obj) {

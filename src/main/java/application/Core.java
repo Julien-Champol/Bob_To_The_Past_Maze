@@ -41,28 +41,10 @@ public class Core {
         this.heros = new HerosSprite(h, labyrinthe);
         vue.add(this.heros);
         //creation des monstres
-        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
-        m = new personnages.Monstre(labyrinthe.getSortie());
-        vue.add(new MonstreSprite(m, labyrinthe));
+        for (int i = 0; i < 11; i++) {
+            IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+            vue.add(new MonstreSprite(m, labyrinthe));
+        }
     }
 
     /**

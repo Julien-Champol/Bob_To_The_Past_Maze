@@ -31,11 +31,11 @@ Objectifs réalisés :
     - [X] Exercice 15  
   <br/>
 
-- [ ] Objectif 4 : monstres (polymorphisme sur les personnages)
+- [X] Objectif 4 : monstres (polymorphisme sur les personnages)
   
   - [X] Exercice 16
   - [X] Exercice 17
-  - [ ] Exercice 18  
+  - [X] Exercice 18  
   <br/>
 
 - [ ] Objectif 5 : améliorations simples (animations, éclairage localisé)

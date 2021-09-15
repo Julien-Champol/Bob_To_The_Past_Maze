@@ -137,6 +137,10 @@
         La vue hérite à présent de CopyOnWriteArrayList.
         Les collisions entre le personnage et les monstres ne sont pas fonctionnels, on remplace les == et != de core par des appels à .equals.
         Avant d'aller plus loin, un nettoyage du code, la mise à jour du diagramme de classe et une documentation uniforme s'impose.
+## 15/09
+#####   Fin de la documentation et de la première refactorisation 
+        Remise à jour du diagramme final et début de l'objectif 5.
+
 
 
 

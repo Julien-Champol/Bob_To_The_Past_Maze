@@ -9,20 +9,25 @@ import vue2D.AVue;
 import vue2D.sprites.ISprite;
 
 /**
- * Class representing data about the view using the structure of AVue and Ivue
+ * Classe représentant des données sur la vue graphique d'un labyrinthe
  *
  * @author INFO Professors team
  */
 public class Vue extends AVue implements IVue {
-    
+
+    // Instance de Dessin permettant d'appeler les méthodes de dessin sur le labyrinthe
     Dessin dessin;
+
+    // Le labyrinthe représenté
     ILabyrinthe labyrinthe;
+
+    // Elément obligatoire
     public Scene scene;
 
     /**
-     * Parameterized constructor of the class
+     * COnstructeur paramétré de la classe
      *
-     * @param labyrinthe
+     * @param labyrinthe le labyrinthe à représenter
      */
     public Vue(ILabyrinthe labyrinthe) {
         this.labyrinthe = labyrinthe;
@@ -33,7 +38,7 @@ public class Vue extends AVue implements IVue {
     }
 
     /**
-     * The drawing method of the view
+     * Méthode de dessin des éléments du labyrinthe
      */
     @Override
     public void dessiner() {
@@ -47,8 +52,7 @@ public class Vue extends AVue implements IVue {
     }
 
     /**
-     * Method used to tell that the keylistener is on, helps to manage the key
-     * strokes
+     * Méthode d'ajout d'un sprite à la vue
      *
      * @param sprite
      * @return
