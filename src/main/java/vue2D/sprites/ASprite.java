@@ -61,8 +61,8 @@ public abstract class ASprite implements ISprite {
     /**
      * Méthode changeant les coordonnées d'un sprite
      *
-     * @param xpix
-     * @param ypix
+     * @param xpix abscisse sprite
+     * @param ypix ordonnée sprite
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {

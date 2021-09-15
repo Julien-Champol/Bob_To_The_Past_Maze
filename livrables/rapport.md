@@ -133,13 +133,18 @@
             ex.printStackTrace();
         }
 
-        Le jeu est plus aggréable à regarder de cette manière.
+        Le jeu est plus agréable à regarder de cette manière.
         La vue hérite à présent de CopyOnWriteArrayList.
-        Les collisions entre le personnage et les monstres ne sont pas fonctionnels, on remplace les == et != de core par des appels à .equals.
+        Les collisions entre le personnage et les monstres ne sont pas fonctionnelles, on remplace les == et != de core par des appels à .equals(Object).
         Avant d'aller plus loin, un nettoyage du code, la mise à jour du diagramme de classe et une documentation uniforme s'impose.
 ## 15/09
 #####   Fin de la documentation et de la première refactorisation 
         Remise à jour du diagramme final et début de l'objectif 5.
+####    Réalisation exercice 19
+        Pour dissocier le déplacement salle par salle dans le labyrinthe du déplacement graphique, il va falloir changer la méthode 
+        dessinner(GraphicsContext) de la classe ASprite. On ne peut plus utiliser les coordonnées de la position courante dans la méthode,
+        il faudra utiliser la méthode setCoordonnees(int, int).
+
 
 
 

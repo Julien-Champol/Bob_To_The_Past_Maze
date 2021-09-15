@@ -36,15 +36,14 @@ public class Monstre extends APersonnage {
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         Random rmd = new Random();
-        // on choisit aléatoirement un indice compris entre 0 et la taille de 
-        // la collection des sallesAccessibles
-        int indice = rmd.nextInt(sallesAccessibles.size());
         // on ralentit le déplacement des monstres
         try {
             Thread.sleep(5);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-        return (ISalle) sallesAccessibles.toArray()[indice];
+        // on choisit aléatoirement un indice compris entre 0 et la taille de 
+        // la collection des sallesAccessibles
+        return (ISalle) sallesAccessibles.toArray()[rmd.nextInt(sallesAccessibles.size())];
     }
 }
