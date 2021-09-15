@@ -145,6 +145,9 @@
         dessinner(GraphicsContext) de la classe ASprite. On ne peut plus utiliser les coordonnées de la position courante dans la méthode,
         il faudra utiliser la méthode setCoordonnees(int, int).
 
+        
+
+
 
 
 

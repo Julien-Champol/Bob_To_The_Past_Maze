@@ -58,15 +58,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        int i;
-        int j;
-        for (i = this.spriteX; i <= monPersonnage.getPosition().getX() * UNITE; i++) {
-            for (j = this.spriteY; j <= monPersonnage.getPosition().getY() * UNITE; j++) {
-                g.drawImage(spriteImage, i, j, UNITE, UNITE);
-            }
-        }
-        setCoordonnees(monPersonnage.getPosition().getX(), monPersonnage.getPosition().getY());
-        enMouvement = false;
+        g.drawImage(spriteImage, spriteX, spriteY, UNITE, UNITE);
     }
 
     /**
@@ -129,6 +121,15 @@ public abstract class ASprite implements ISprite {
     @Override
     public void setPosition(ISalle s) {
         this.monPersonnage.setPosition(s);
+        // l'idée est-elle bonne ?
+        /*
+        setCoordonnees((int) (s.getX() - 0.6), (int) (s.getY() - 0.6));
+        setCoordonnees((int) (s.getX() - 0.5), (int) (s.getY() - 0.5));
+        setCoordonnees((int) (s.getX() - 0.4), (int) (s.getY() - 0.4));
+        setCoordonnees((int) (s.getX() - 0.3), (int) (s.getY() - 0.3));
+        setCoordonnees((int) (s.getX() - 0.2), (int) (s.getY() - 0.2));
+        setCoordonnees((int) (s.getX() - 0.1), (int) (s.getY() - 0.1));*/
+        setCoordonnees(s.getX(), s.getY());
     }
 
 }
