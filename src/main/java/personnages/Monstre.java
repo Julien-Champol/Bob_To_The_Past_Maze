@@ -38,7 +38,7 @@ public class Monstre extends APersonnage {
         Random rmd = new Random();
         // on ralentit le déplacement des monstres
         try {
-            Thread.sleep(5);
+            Thread.sleep(50);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }

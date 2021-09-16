@@ -58,7 +58,6 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        // ICI APPEL A SETCOORDONNEES
         g.drawImage(spriteImage, spriteX, spriteY, UNITE, UNITE);
     }
 
@@ -70,7 +69,25 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        // ICI SWITCH SUR LA DIFFERENCE DES COORDONNEES
+        //System.out.println("spriteX : " + spriteX + " spriteY : " + spriteY);
+        //System.out.println("xpix : " + xpix * UNITE + " ypix : " + ypix * UNITE);
+        /*
+        // On se déplace vers la droite
+        if (xpix > spriteX) {
+            xpix -= 14;
+        }
+        // On se déplace vers la gauche
+        if (xpix < spriteX) {
+            xpix += 14;
+        }
+        // On se déplace vers le bas
+        if (ypix > spriteY) {
+            ypix -= 14;
+        }
+        // On se déplace vers le haut
+        if (ypix < spriteY) {
+            ypix += 14;
+        }*/
         this.spriteX = xpix * UNITE;
         this.spriteY = ypix * UNITE;
     }
