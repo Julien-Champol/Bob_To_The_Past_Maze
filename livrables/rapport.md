@@ -148,7 +148,23 @@
 ####    Reprise exercice 19
         Indice obtenu sur la réalisation de l'exercice 19 : déplacement de 1 pixel en 1 pixel au lieu de 15 en 15. 
         La difficulté jusqu'à présent rencontrée dans le code réside dans ce changement du déplacement. 
+        L'utilisation d'une méthode lerp(linear interpolation) de manière similaire à celle d'un camarade semble judicieuse.
+        De cette façon, on a plus à se soucier de lancer un déplacement graphique ssi le déplacement par salle est fini, 
+        en effet en utilisant le code de la manière suivante, les coordonnées du sprite "traquent" celle de la salle :
+        
+        On insère la méthode suivante dans la classe ASprite :
 
+        public static float lerp(float b, float a, float f) {
+        return b + f * (a - b);
+        }
+
+        on l'appelle deux fois dans la méthode dessiner(GraphicsContext) lignes 58 et 59 : 
+        
+        spriteX = lerp(spriteX, monPersonnage.getPosition().getX() * UNITE, 0.20f);
+        spriteY = lerp(spriteY, monPersonnage.getPosition().getY() * UNITE, 0.20f);
+
+        La méthode dessinner() étant appelée plusieurs fois par seconde que la position du personnage change ou non, on 
+        a pas à se soucier d'ajouter une quelconque boucle au programme.
         
 
 

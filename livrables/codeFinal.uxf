@@ -78,7 +78,7 @@ AVue
 --
 + Vue(ILabyrinthe)
 + dessiner() : void
-+ add(ISprite) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1033</x><y>1040</y><w>660</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;640;90;640;30</additional_attributes></element><element><id>Relation</id><coordinates><x>1343</x><y>980</y><w>310</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60;290;60</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>2033</x><y>510</y><w>1060</w><h>350</h></coordinates><panel_attributes>vue2D.sprites</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>2083</x><y>0</y><w>930</w><h>480</h></coordinates><panel_attributes>personnages</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2243</x><y>50</y><w>310</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ add(ISprite) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1033</x><y>1040</y><w>660</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;640;90;640;30</additional_attributes></element><element><id>Relation</id><coordinates><x>1343</x><y>980</y><w>310</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60;290;60</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>2033</x><y>500</y><w>1060</w><h>370</h></coordinates><panel_attributes>vue2D.sprites</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>2083</x><y>0</y><w>930</w><h>480</h></coordinates><panel_attributes>personnages</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2243</x><y>50</y><w>310</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 IPersonnage
 --
 + faitSonChoix(Collection &lt;ISalle &gt;) : ISalle
@@ -112,7 +112,7 @@ ExceptionInvalidFile
 + salleChoisie : ISalle
 --
 + Heros(ISalle)
-+ faitSonChoix(Collection &lt;ISalle &gt;) : ISalle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2303</x><y>269</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2061</x><y>559</y><w>260</w><h>280</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
++ faitSonChoix(Collection &lt;ISalle &gt;) : ISalle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2303</x><y>269</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2061</x><y>539</y><w>260</w><h>300</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ASprite
 --
 + monPersonnage : IPersonnage
@@ -125,6 +125,7 @@ ASprite
 --
 + ASprite(IPersonnage, Image)
 + dessiner(GraphicsContext) : void
+_+ lerp(float, float, float) : float_
 + setCoordonnees(int, int) : void
 + getSpriteX() : int
 + getSpriteY() : int

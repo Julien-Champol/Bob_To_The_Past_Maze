@@ -23,19 +23,16 @@ public abstract class ASprite implements ISprite {
     public IPersonnage monPersonnage;
 
     // l'abscisse du sprite, initialisé à l'abscisse du joueur
-    private int spriteX;
+    private float spriteX;
 
     // l'ordonnée du sprite, initialisé à l'ordonnée du joueur
-    private int spriteY;
+    private float spriteY;
 
     // le nombre de pixels par lequel on multiplie les coordonnées 
     private final int UNITE = 15;
 
     // l'image du sprite
     private Image spriteImage;
-
-    // vrai ssi le personnage est en mouvement
-    public boolean enMouvement;
 
     /**
      * Constructeur paramétré de la classe
@@ -46,8 +43,8 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage monPersonnage, Image spriteImage) {
         this.monPersonnage = monPersonnage;
         this.spriteImage = spriteImage;
-        this.spriteX = monPersonnage.getPosition().getX();
-        this.spriteY = monPersonnage.getPosition().getY();
+        this.spriteX = monPersonnage.getPosition().getX() * UNITE;
+        this.spriteY = monPersonnage.getPosition().getY() * UNITE;
     }
 
     /**
@@ -58,7 +55,23 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
+        spriteX = lerp(spriteX, monPersonnage.getPosition().getX() * UNITE, 0.15f);
+        spriteY = lerp(spriteY, monPersonnage.getPosition().getY() * UNITE, 0.15f);
         g.drawImage(spriteImage, spriteX, spriteY, UNITE, UNITE);
+    }
+
+    /**
+     * Méthode d'interpolation linéaire utilisée dans la méthode dessinée afin
+     * de rapprocher a de b selon un pourcentage f
+     *
+     * @param b position selon x ou y du sprite
+     * @param a position selon x ou y du joueur
+     * @param f pourcentage de la distance à parcourir, autrement dit, vitesse
+     * de déplacement
+     * @return la nouvelle position
+     */
+    public static float lerp(float b, float a, float f) {
+        return b + f * (a - b);
     }
 
     /**
@@ -69,25 +82,6 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        //System.out.println("spriteX : " + spriteX + " spriteY : " + spriteY);
-        //System.out.println("xpix : " + xpix * UNITE + " ypix : " + ypix * UNITE);
-        /*
-        // On se déplace vers la droite
-        if (xpix > spriteX) {
-            xpix -= 14;
-        }
-        // On se déplace vers la gauche
-        if (xpix < spriteX) {
-            xpix += 14;
-        }
-        // On se déplace vers le bas
-        if (ypix > spriteY) {
-            ypix -= 14;
-        }
-        // On se déplace vers le haut
-        if (ypix < spriteY) {
-            ypix += 14;
-        }*/
         this.spriteX = xpix * UNITE;
         this.spriteY = ypix * UNITE;
     }
@@ -97,7 +91,7 @@ public abstract class ASprite implements ISprite {
      *
      * @return spriteX
      */
-    public int getSpriteX() {
+    public float getSpriteX() {
         return this.spriteX;
     }
 
@@ -106,7 +100,7 @@ public abstract class ASprite implements ISprite {
      *
      * @return spriteY
      */
-    public int getSpriteY() {
+    public float getSpriteY() {
         return this.spriteY;
     }
 
@@ -140,7 +134,6 @@ public abstract class ASprite implements ISprite {
     @Override
     public void setPosition(ISalle s) {
         this.monPersonnage.setPosition(s);
-        setCoordonnees(s.getX(), s.getY());
     }
 
 }
