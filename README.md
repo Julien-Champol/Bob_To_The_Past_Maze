@@ -40,7 +40,7 @@ Objectifs réalisés :
 
 - [ ] Objectif 5 : améliorations simples (animations, éclairage localisé)
   
-  - [ ] Exercice 19
+  - [X] Exercice 19
   - [ ] Exercice 20  
   <br/>
 
