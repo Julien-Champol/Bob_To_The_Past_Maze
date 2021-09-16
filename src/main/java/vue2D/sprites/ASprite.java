@@ -28,7 +28,7 @@ public abstract class ASprite implements ISprite {
     // l'ordonnée du sprite, initialisé à l'ordonnée du joueur
     private int spriteY;
 
-    // le nombre d'unités par lequel on multiplie la taille réelle de l'image
+    // le nombre de pixels par lequel on multiplie les coordonnées 
     private final int UNITE = 15;
 
     // l'image du sprite
@@ -58,6 +58,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
+        // ICI APPEL A SETCOORDONNEES
         g.drawImage(spriteImage, spriteX, spriteY, UNITE, UNITE);
     }
 
@@ -69,6 +70,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
+        // ICI SWITCH SUR LA DIFFERENCE DES COORDONNEES
         this.spriteX = xpix * UNITE;
         this.spriteY = ypix * UNITE;
     }
@@ -121,14 +123,6 @@ public abstract class ASprite implements ISprite {
     @Override
     public void setPosition(ISalle s) {
         this.monPersonnage.setPosition(s);
-        // l'idée est-elle bonne ?
-        /*
-        setCoordonnees((int) (s.getX() - 0.6), (int) (s.getY() - 0.6));
-        setCoordonnees((int) (s.getX() - 0.5), (int) (s.getY() - 0.5));
-        setCoordonnees((int) (s.getX() - 0.4), (int) (s.getY() - 0.4));
-        setCoordonnees((int) (s.getX() - 0.3), (int) (s.getY() - 0.3));
-        setCoordonnees((int) (s.getX() - 0.2), (int) (s.getY() - 0.2));
-        setCoordonnees((int) (s.getX() - 0.1), (int) (s.getY() - 0.1));*/
         setCoordonnees(s.getX(), s.getY());
     }
 

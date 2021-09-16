@@ -36,6 +36,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
      */
     @Override
     public void handle(KeyEvent event) {
+        enMouvement = true;
         switch (event.getCode()) {
             case LEFT:
                 this.monHeros.salleChoisie = new Salle(this.getPosition().getX() - 1, this.getPosition().getY());

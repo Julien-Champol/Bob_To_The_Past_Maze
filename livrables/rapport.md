@@ -144,6 +144,11 @@
         Pour dissocier le déplacement salle par salle dans le labyrinthe du déplacement graphique, il va falloir changer la méthode 
         dessinner(GraphicsContext) de la classe ASprite. On ne peut plus utiliser les coordonnées de la position courante dans la méthode,
         il faudra utiliser la méthode setCoordonnees(int, int).
+## 16/09
+####    Reprise exercice 19
+        Indice obtenu sur la réalisation de l'exercice 19 : déplacement de 1 pixel en 1 pixel au lieu de 15 en 15. 
+        Le code initial permet-il d'appeler la fonction setCoordonnees(int, int) tant que la position du joueur et la 
+        position du sprite ne sont pas égales ?
 
         
 
