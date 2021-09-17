@@ -165,7 +165,27 @@
 
         La méthode dessinner() étant appelée plusieurs fois par seconde que la position du personnage change ou non, on 
         a pas à se soucier d'ajouter une quelconque boucle au programme.
+## 17/09
+####    Réalisation exercice 20
+        Arrivé à ce stade, la première étape est de faire la différence entre les coordonnées euclidiennes et Manhattan.
+        Nous utiliserons les coordonnées euclidiennes comme dans tout le code.
+        Il faut également svoir quelle propriété modifier pour faire en sorte qu'une salle ne soit pas affichée.
         
+        On pourrait utiliser les méthodes de GraphicsContext telles que SetEffect(Effect) combinée avec une instance 
+        de la classe ColorAdjust. Une fois ColorAdjust instancié on appelle la méthode setBrightness et on a notre effet.
+        Pour retirer l'effect on utilise setEffect(null).
+        Après plusieurs tests sans lecture des coordonnées, il semble assez simple d'utiliser ces lignes de code :
+
+                 colorAdjust.setBrightness(-1.0);
+                tampon.setEffect(colorAdjust);
+                tampon.drawImage(salleImage, s.getX() * UNITE, s.getY() * UNITE);
+                tampon.setEffect(null);
+
+        en ajustant la valeur du double en paramètre de setBrightness en fonction de la distance entre le héros et la salle.
+
+        La prochaine étape est de calculer les coordonnées des salles et autres éléments à afficher en fonction de leur distance.
+        Première difficulté : dans quelle classe créer la fonction qui détermine si la salle et le héros sont dans un même 
+        périmètre ?
 
 
 

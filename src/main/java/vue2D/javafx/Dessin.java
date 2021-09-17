@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
@@ -43,6 +44,9 @@ public class Dessin extends Canvas {
 
     // un mur
     private Image mur;
+
+    // Instance de la classe ColorAdjust permettant d'ajouter des effets au dessin
+    private static ColorAdjust colorAdjust = new ColorAdjust();
 
     /**
      * Constructeur paramétré de la classe Dessin
@@ -86,6 +90,9 @@ public class Dessin extends Canvas {
     public void dessinSalleEtMur() {
         // dessin des salles
         for (var s : this.labyrinthe) {
+            //ajustement de l'opacité
+            //colorAdjust.setBrightness(-1.0);
+            //tampon.setEffect(colorAdjust);
             if (s.equals(labyrinthe.getEntree())) {
                 tampon.drawImage(entree, s.getX() * UNITE, s.getY() * UNITE);
             } else if (s.equals(labyrinthe.getSortie())) {
@@ -93,6 +100,7 @@ public class Dessin extends Canvas {
             } else {
                 tampon.drawImage(salleImage, s.getX() * UNITE, s.getY() * UNITE);
             }
+            tampon.setEffect(null);
         }
         // dessin des murs
         HashSet<ISalle> murs = new HashSet<>();
@@ -106,7 +114,11 @@ public class Dessin extends Canvas {
         murs.removeAll(this.labyrinthe);
         // reste les murs
         for (var actu : murs) {
+            //ajustement de l'opacité
+            //colorAdjust.setBrightness(-1.0);
+            //tampon.setEffect(colorAdjust);
             tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
+            tampon.setEffect(null);
         }
     }
 }
