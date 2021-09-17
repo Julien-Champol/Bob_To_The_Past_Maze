@@ -55,7 +55,7 @@ _+ testDoublonsSallesFichier(File) : boolean_
 _+ testValide(String) : boolean_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>903</x><y>970</y><w>210</w><h>80</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 AVue
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1043</x><y>30</y><w>420</w><h>960</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>391;10;390;280;100;280;100;860;10;860;10;940</additional_attributes></element><element><id>Relation</id><coordinates><x>1103</x><y>980</y><w>240</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>220;10;220;50;10;50</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1533</x><y>870</y><w>840</w><h>450</h></coordinates><panel_attributes>vue2D.javafx</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1563</x><y>60</y><w>100</w><h>30</h></coordinates><panel_attributes>Canvas</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1563</x><y>80</y><w>440</w><h>830</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120;420;120;420;810</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1903</x><y>930</y><w>360</w><h>300</h></coordinates><panel_attributes>Dessin
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1043</x><y>30</y><w>420</w><h>960</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>391;10;390;280;100;280;100;860;10;860;10;940</additional_attributes></element><element><id>Relation</id><coordinates><x>1103</x><y>980</y><w>240</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>220;10;220;50;10;50</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1533</x><y>870</y><w>840</w><h>450</h></coordinates><panel_attributes>vue2D.javafx</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1563</x><y>60</y><w>100</w><h>30</h></coordinates><panel_attributes>Canvas</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1563</x><y>80</y><w>440</w><h>830</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120;420;120;420;810</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1903</x><y>930</y><w>360</w><h>270</h></coordinates><panel_attributes>Dessin
 --
 - sprites : Collection&lt;Sprite&gt;
 - labyrinthe : ILabyrinthe
@@ -67,7 +67,6 @@ AVue
 - sortie : Image
 - mur : Image
 - tmp : Image
-+ colorAdjust : ColorAdjust
 - murs : HashSet&lt;ISalle&gt;
 --
 + Dessin(Ilabyrinthe, Collection&lt;ISprite&gt;)

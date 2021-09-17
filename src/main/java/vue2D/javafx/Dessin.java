@@ -48,10 +48,7 @@ public class Dessin extends Canvas {
 
     // image temporaire
     private Image tmp;
-
-    // Instance de la classe ColorAdjust permettant d'ajouter des effets au dessin
-    public ColorAdjust colorAdjust = new ColorAdjust();
-
+    
     private HashSet<ISalle> murs = new HashSet<>();
 
     /**
@@ -110,18 +107,15 @@ public class Dessin extends Canvas {
      */
     public void dessinSalleEtMur() {
         for (ISprite sprite : sprites) {
-            // dessin des salles
             for (ISalle s : this.labyrinthe) {
                 //ajustement de l'opacité
                 if (perimetreSprite(s, sprite.getPosition(), 5)) {
-                    colorAdjust.setBrightness(-10.00);
+                    tampon.setGlobalAlpha(0.2);
                 } else if (perimetreSprite(s, sprite.getPosition(), 3)) {
-                    colorAdjust.setBrightness(-0.8);
+                    tampon.setGlobalAlpha(0.6);
                 } else if (perimetreSprite(s, sprite.getPosition(), 2)) {
-                    colorAdjust.setBrightness(0.1);
+                    tampon.setGlobalAlpha(0.9);
                 }
-                //On applique l'effet au tampon
-                tampon.setEffect(colorAdjust);
                 // On commence à dessiner
                 if (s.equals(labyrinthe.getEntree())) {
                     tmp = entree;
@@ -131,7 +125,6 @@ public class Dessin extends Canvas {
                     tmp = salleImage;
                 }
                 tampon.drawImage(tmp, s.getX() * UNITE, s.getY() * UNITE);
-                tampon.setEffect(null);
             }
 
             // dessin des murs
@@ -145,18 +138,9 @@ public class Dessin extends Canvas {
             murs.removeAll(this.labyrinthe);
             // reste les murs
             for (var actu : murs) {
-                //ajustement de l'opacité
-                if (perimetreSprite(actu, sprite.getPosition(), 8)) {
-                    colorAdjust.setBrightness(-10.00);
-                } else if (perimetreSprite(actu, sprite.getPosition(), 5)) {
-                    colorAdjust.setBrightness(-0.8);
-                } else if (perimetreSprite(actu, sprite.getPosition(), 2)) {
-                    colorAdjust.setBrightness(0.1);
-                }
-                tampon.setEffect(colorAdjust);
                 tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
-                tampon.setEffect(null);
             }
+            tampon.setGlobalAlpha(1);
         }
     }
 }

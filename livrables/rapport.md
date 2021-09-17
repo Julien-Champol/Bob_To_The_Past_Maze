@@ -195,6 +195,9 @@
         le choix des méthodes.
 
         Assistance de M Pêcher, indice sur les éléments les plus coûteux : le setEffect.
+        Suite à la comparaison de mon code avec celui d'un camarade donnant un résultat plus agréable, je décide d'utiliser 
+        setGlobalAlpha(double) à la place de setEffect(Effect) pour gérer l'opacité plutôt que la luminosité.
+        On peut donc supprimer l'attribut colorAdjust.
 
 
 
