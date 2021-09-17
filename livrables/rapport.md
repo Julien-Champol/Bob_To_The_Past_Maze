@@ -217,6 +217,8 @@
          
         après chaque boucle for.
 
+        A ce stade du projet, je refactor le code et la documentation au maximum mais je décide de ne pas implémenter d'avantage de possibilités.
+
 
 
 
