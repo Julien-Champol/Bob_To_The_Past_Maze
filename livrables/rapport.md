@@ -186,6 +186,13 @@
         La prochaine étape est de calculer les coordonnées des salles et autres éléments à afficher en fonction de leur distance.
         Première difficulté : dans quelle classe créer la fonction qui détermine si la salle et le héros sont dans un même 
         périmètre ?
+        Cela est réalisable dans la classe Dessin grâce au conteneur sprites.
+        J'utilise ici une méthode détectant la présence d'un point hors d'un périmètre trouvée à cette adresse :
+        https://stackoverflow.com/questions/481144/equation-for-testing-if-a-point-is-inside-a-circle
+
+        A ce stade le code est fonctionnel MAIS le héros n'est pas éclairé et le code est très lourd, le programme saccade.
+        Je procède à de petites optimisations mais rien ne permet un changement conséquent. Le problème réside peut-être dans
+        le choix des méthodes.
 
 
 

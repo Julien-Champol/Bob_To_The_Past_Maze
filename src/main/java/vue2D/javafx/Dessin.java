@@ -2,6 +2,7 @@ package vue2D.javafx;
 
 import java.util.Collection;
 import java.util.HashSet;
+import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.ColorAdjust;
@@ -45,8 +46,13 @@ public class Dessin extends Canvas {
     // un mur
     private Image mur;
 
+    // image temporaire
+    private Image tmp;
+
     // Instance de la classe ColorAdjust permettant d'ajouter des effets au dessin
-    private static ColorAdjust colorAdjust = new ColorAdjust();
+    public ColorAdjust colorAdjust = new ColorAdjust();
+
+    private HashSet<ISalle> murs = new HashSet<>();
 
     /**
      * Constructeur paramétré de la classe Dessin
@@ -77,6 +83,21 @@ public class Dessin extends Canvas {
     }
 
     /**
+     * Méthode retournant vrai ssi une salle ou un mur est hors d'un certain
+     * périmètre autour d'un sprite Trouvable à cette addresse :
+     *
+     * https://stackoverflow.com/questions/481144/equation-for-testing-if-a-point-is-inside-a-circle
+     *
+     * @param test la salle à tester
+     * @param centre la position du sprite
+     * @param rayon le rayon autour du sprite
+     * @return vrai ssi test n'est pas dans le rayon de centre
+     */
+    public boolean perimetreSprite(ISalle test, ISalle centre, int rayon) {
+        return (Math.pow(test.getX() - centre.getX(), 2) + Math.pow(test.getY() - centre.getY(), 2) > Math.pow(rayon, 2));
+    }
+
+    /**
      * Méthode de dessin de l'image de fond
      */
     public void dessinFond() {
@@ -88,37 +109,54 @@ public class Dessin extends Canvas {
      * Méthode de dessin des salles et des murs
      */
     public void dessinSalleEtMur() {
-        // dessin des salles
-        for (var s : this.labyrinthe) {
-            //ajustement de l'opacité
-            //colorAdjust.setBrightness(-1.0);
-            //tampon.setEffect(colorAdjust);
-            if (s.equals(labyrinthe.getEntree())) {
-                tampon.drawImage(entree, s.getX() * UNITE, s.getY() * UNITE);
-            } else if (s.equals(labyrinthe.getSortie())) {
-                tampon.drawImage(sortie, s.getX() * UNITE, s.getY() * UNITE);
-            } else {
-                tampon.drawImage(salleImage, s.getX() * UNITE, s.getY() * UNITE);
+        for (ISprite sprite : sprites) {
+            // dessin des salles
+            for (ISalle s : this.labyrinthe.sallesAccessibles(sprite)) {
+                //ajustement de l'opacité
+                if (perimetreSprite(s, sprite.getPosition(), 5)) {
+                    colorAdjust.setBrightness(-10.00);
+                } else if (perimetreSprite(s, sprite.getPosition(), 3)) {
+                    colorAdjust.setBrightness(-0.8);
+                } else if (perimetreSprite(s, sprite.getPosition(), 2)) {
+                    colorAdjust.setBrightness(0.1);
+                }
+                //On applique l'effet au tampon
+                tampon.setEffect(colorAdjust);
+                // On commence à dessiner
+                if (s.equals(labyrinthe.getEntree())) {
+                    tmp = entree;
+                } else if (s.equals(labyrinthe.getSortie())) {
+                    tmp = sortie;
+                } else {
+                    tmp = salleImage;
+                }
+                tampon.drawImage(tmp, s.getX() * UNITE, s.getY() * UNITE);
+                tampon.setEffect(null);
             }
-            tampon.setEffect(null);
-        }
-        // dessin des murs
-        HashSet<ISalle> murs = new HashSet<>();
-        // on calcule les coordonnées de toutes les salles possibles
-        for (int i = 0; i < this.labyrinthe.getLargeur(); i++) {
-            for (int j = 0; j < this.labyrinthe.getHauteur(); j++) {
-                murs.add(new Salle(i, j));
+
+            // dessin des murs
+            // on calcule les coordonnées de toutes les salles possibles
+            for (int i = 0; i < this.labyrinthe.getLargeur(); i++) {
+                for (int j = 0; j < this.labyrinthe.getHauteur(); j++) {
+                    murs.add(new Salle(i, j));
+                }
             }
-        }
-        // on retire les salles existentes
-        murs.removeAll(this.labyrinthe);
-        // reste les murs
-        for (var actu : murs) {
-            //ajustement de l'opacité
-            //colorAdjust.setBrightness(-1.0);
-            //tampon.setEffect(colorAdjust);
-            tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
-            tampon.setEffect(null);
+            // on retire les salles existentes
+            murs.removeAll(this.labyrinthe);
+            // reste les murs
+            for (var actu : murs) {
+                //ajustement de l'opacité
+                if (perimetreSprite(actu, sprite.getPosition(), 8)) {
+                    colorAdjust.setBrightness(-10.00);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 5)) {
+                    colorAdjust.setBrightness(-0.8);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 2)) {
+                    colorAdjust.setBrightness(0.1);
+                }
+                tampon.setEffect(colorAdjust);
+                tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
+                tampon.setEffect(null);
+            }
         }
     }
 }
