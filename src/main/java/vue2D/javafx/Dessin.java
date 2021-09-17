@@ -111,7 +111,7 @@ public class Dessin extends Canvas {
     public void dessinSalleEtMur() {
         for (ISprite sprite : sprites) {
             // dessin des salles
-            for (ISalle s : this.labyrinthe.sallesAccessibles(sprite)) {
+            for (ISalle s : this.labyrinthe) {
                 //ajustement de l'opacité
                 if (perimetreSprite(s, sprite.getPosition(), 5)) {
                     colorAdjust.setBrightness(-10.00);

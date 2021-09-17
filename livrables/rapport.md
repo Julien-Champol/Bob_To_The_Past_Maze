@@ -194,6 +194,8 @@
         Je procède à de petites optimisations mais rien ne permet un changement conséquent. Le problème réside peut-être dans
         le choix des méthodes.
 
+        Assistance de M Pêcher, indice sur les éléments les plus coûteux : le setEffect.
+
 
 
 
