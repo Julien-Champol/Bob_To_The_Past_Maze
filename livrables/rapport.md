@@ -199,6 +199,24 @@
         setGlobalAlpha(double) à la place de setEffect(Effect) pour gérer l'opacité plutôt que la luminosité.
         On peut donc supprimer l'attribut colorAdjust.
 
+        L'éclairage est à présent fonctionnel en utilisant cette propriété générale.
+        Voici le code modifié :
+
+        
+                if (perimetreSprite(actu, sprite.getPosition(), 5)) {
+                    tampon.setGlobalAlpha(0.0);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 3)) {
+                    tampon.setGlobalAlpha(0.6);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 2)) {
+                    tampon.setGlobalAlpha(0.9);
+                }
+         
+        en oubliant pas 
+    
+            tampon.setGlobalAlpha(1);
+         
+        après chaque boucle for.
+
 
 
 

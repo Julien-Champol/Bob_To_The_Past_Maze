@@ -38,10 +38,10 @@ Objectifs réalisés :
   - [X] Exercice 18 15/09 
   <br/>
 
-- [ ] Objectif 5 : améliorations simples (animations, éclairage localisé)
+- [X] Objectif 5 : améliorations simples (animations, éclairage localisé)
   
   - [X] Exercice 19 16/09
-  - [ ] Exercice 20  
+  - [X] Exercice 20 17/09  
   <br/>
 
 - [ ] Objectif 6 : améliorations plus complexe basées sur les plus courts chemins

@@ -48,7 +48,7 @@ public class Dessin extends Canvas {
 
     // image temporaire
     private Image tmp;
-    
+
     private HashSet<ISalle> murs = new HashSet<>();
 
     /**
@@ -110,7 +110,7 @@ public class Dessin extends Canvas {
             for (ISalle s : this.labyrinthe) {
                 //ajustement de l'opacité
                 if (perimetreSprite(s, sprite.getPosition(), 5)) {
-                    tampon.setGlobalAlpha(0.2);
+                    tampon.setGlobalAlpha(0.0);
                 } else if (perimetreSprite(s, sprite.getPosition(), 3)) {
                     tampon.setGlobalAlpha(0.6);
                 } else if (perimetreSprite(s, sprite.getPosition(), 2)) {
@@ -137,7 +137,15 @@ public class Dessin extends Canvas {
             // on retire les salles existentes
             murs.removeAll(this.labyrinthe);
             // reste les murs
+            //ajustement de l'opacité
             for (var actu : murs) {
+                if (perimetreSprite(actu, sprite.getPosition(), 5)) {
+                    tampon.setGlobalAlpha(0.0);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 3)) {
+                    tampon.setGlobalAlpha(0.6);
+                } else if (perimetreSprite(actu, sprite.getPosition(), 2)) {
+                    tampon.setGlobalAlpha(0.9);
+                }
                 tampon.drawImage(mur, actu.getX() * UNITE, actu.getY() * UNITE);
             }
             tampon.setGlobalAlpha(1);
